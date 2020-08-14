@@ -117,13 +117,13 @@ function all_equi(){
     <thead class="thead-light">
       <tr>
         <th>#</th><th>Nombre Equipo</th><th>Tipo</th><th>Modelo</th><th>Serie</th><th>OS</th><th>RAM</th><th>Procesador</th><th>Disco Duro</th>
-        <th><input type="text" style="width: 120px;"></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <th>
+        <td>
         <!-- ///////////////////////////////// -->
         <!-- FORMULARIO PARA AGREGAR UN EQUIPO -->
         <!-- ///////////////////////////////// -->
@@ -201,11 +201,12 @@ function all_equi(){
         <!-- ////////////////////////////////////// -->
         <!-- FIN DEL FORMULARIO PARA AGREGAR EQUIPO -->
         <!-- ////////////////////////////////////// -->
-          <i class="fas fa-plus-square margin-iz-de-10px" id="agregar" style="cursor: pointer;" onclick="addqe();"></i>
-          <i class="fas fa-edit margin-iz-de-10px" style="cursor: pointer;"></i>
-          <i class="fas fa-file-alt margin-iz-de-10px" style="cursor: pointer;"></i>
-          <i class="fas fa-trash margin-iz-de-10px" style="cursor: pointer;"></i>
-        </th>
+          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
+          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" title="Editar"></i>
+          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" title="Enforme de Equipo"></i>
+          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" title="Cargo de Entrega"></i>
+          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" title="Eliminar"></i>
+        </td>
       </tr>
     </tbody>
   </table>
