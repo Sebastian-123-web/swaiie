@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/css-bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style-2.css">
+    <link href="js/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/e20f78cd09.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body class="bg-light">
+  <div class="" style="height: 100vh;">
+    <div class="d-flex justify-content-between bg-dark text-white" style="height: 50px;">
+      <div class="" style="display: flex;">
+        <div class="menu_hambug" id="divmenu" onclick="menu_hambug();">
+          <img src="img/menu_hamburguesa.png" alt="" style="width: 25px; height: 25px;" id="menu">
+        </div>
+        <div class="">
+            <h4 class="head-logo">Logo</h4>
+        </div>
+      </div>
+      <div class="">
+          <p style="cursor: pointer;">Administrador<i class="fas fa-user-tie margin-10px"></i></p>
+      </div>
+    </div>
+
+    <div class="d-flex" style="height: calc(100% - 50px)">
+      <div class="bg-dark nav-respon" id="nav" style="width: 170px;">
+        <nav class="m-2 text-white">
+          <p style="cursor: pointer;" onclick="navigation('t');">Ticket</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('u');">Usuarios</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('e');">Estadisticas</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('q');">Equipos</p>
+        </nav>
+      </div>
+   <!-- ---------------------------------- CONTENIDO DE PAGINA --------------------------------------------- -->
+
+      <div class="d-flex card-columns" id="contenido" style="width: calc(100% - 170px);">
+        <div class="card tkt respon-tkt" style="min-width: 400px;">
+          <div class="card-header d-flex">
+            <button type="button" name="" id="caja_busqueda" class="btn btn-secondary" style="margin-right: 20px;" id="caja_busqueda">Eliminar</button>
+            <select name="estado" class="form-control" id="state" style="margin-right: 20px;">
+                      <option selected value="Todo">Todo</option>
+                      <option value="Abierto">Abierto</option>
+                      <option value="Pendiente">Pendiente</option>
+                      <option value="Resuelto">Resuelto</option>
+                      <option value="Cerrado">Cerrado</option>
+            </select>
+            <select name="prioridad" class="form-control" id="priority" style="margin-right: 20px;">
+                      <option selected value="Todo">Todo</option>
+                      <option value="Bajo">Bajo</option>
+                      <option value="Medio">Medio</option>
+                      <option value="Alto">Alto</option>
+                      <option value="Urgente">Urgente</option>
+            </select>
+            <input type="text" name="" value="" class="form-control" id="buscar" placeholder="Buscar" style="margin-right: 20px;">
+            <img src="img/busqueda.png" alt="" class="img-busqueda" onclick="search();">
+          </div>
+          <!-- -------------------------------------------- TICKET ---------------------------------------------- -->
+          <div class="overflow-auto" style="min-width: 400px; height: ;">
+
+          </div>
+          <!-- ------------------------------------------ FIN TICKET ------------------------------------------ -->
+        </div>
+        <div class="card rank respon-rank" style="width: 500px; height: ; min-width: 400px;">
+          <div class="card-header">
+            Racking
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------------- FIN CONTENIDO DE PAGINA ------------------------------------ -->
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="js/all.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    window.onload = navigation('t');
+    function inf_mant(nt){
+      $("#ventana").dialog({
+        width: 550,
+        title: "Datos del Equipo",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Aceptar": function(){
+            $(this).dialog("close");
+            var modelo = document.getElementById('modelo').value;
+            var serie = document.getElementById('serie').value;
+            serie = serie.toUpperCase();//PONE TODO EL STRING EN MAYUSCULA (JAVASCRIPT)
+            var tipo = document.getElementById('tipo').value;
+            var os = document.getElementById('os').value;
+            var ram = document.getElementById('ram').value;
+            var cpu = document.getElementById('cpu').value;
+            var responsable = document.getElementById('responsable').value;
+            var win = window.open('archivos/informe_ticket.php?nticket='+nt+'&modelo='+modelo+'&serie='+serie+'&tipo='+tipo+'&os='+os+'&ram='+ram+'&cpu='+cpu+'&responsable='+responsable, '_blank');
+          }
+        }
+      });
+    }
+
+    // VENTANA PARA AGREGAR UN NUEVO EQUIPO ARRIBA O ABAJO DE ...
+    function addqe(){
+      $("#addpc").dialog({
+        width: 600,
+        height: 475,
+        title: "AGREGAR EQUIPO",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Agregar": function(){
+            alert("Se agrego equipo");
+            $(this).dialog("close");
+          },
+          "Cancelar": function(){
+            $(this).dialog("close");
+          }
+        },
+        // autoOpen: false
+      });
+      // $("#agregar").click(function(event){
+      //   $("#addpc").dialog("open");
+      // });
+    }
+    // FIN DE LA VENTANA PARA AGREGAR UN NUEVO EQUIPO
+
+    function comment(nt){
+      var comment = document.getElementById('comment').value;
+      var commentname = document.getElementById('comment').name;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET','php/savecategory_comment.php?valor1='+commentname+'&valor='+comment+'&nt='+nt,true);
+      xhr.onreadystatechange = function(){
+          if(xhr.readyState = 4 && xhr.status == 200){
+          }
+      }
+      xhr.send();
+    }
+  </script>
+</body>
+</html>

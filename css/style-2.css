@@ -1,0 +1,104 @@
+p{
+  margin: 5px;
+}
+.menu_hambug{
+  width: 25px;
+  height: 25px;
+  margin: auto 15px;
+  display: none;
+}
+.img-user{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.head-logo{
+  margin: 11px;
+}
+hr{
+    width: 130px;
+    border: 1px solid #464d53;
+}
+.e-p-respo{
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+.tkt{
+  width: 700px;
+  height: ;
+  margin: 15px 0 15px 15px;
+}
+.rank{
+  width: 410px;
+  height: ;
+  margin: 15px;
+}
+.img-busqueda{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  margin: auto;
+}
+@media only screen and (min-width:320px) and (max-width:480px){
+  .menu_hambug{
+    display: block;
+  }
+  .btn-respon{
+    display: none;
+  }
+  .nav-respon{
+    display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .respon-rank{
+    display: none;
+  }
+  .respon-tkt{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .e-p-respo{
+    display: none;
+  }
+  .img-tkt{
+    display: none;
+  }
+}
+
+/* ///////////////////////////// */
+/* ESTILOS CREADOS POR SEBASTIAN */
+/* ///////////////////////////// */
+
+.margin-5px{margin: 5px;}
+.margin-ar-ab-5px{margin: 5px 0;}
+.margin-iz-de-5px{margin: 0 5px;}
+
+.margin-10px{margin: 10px;}
+.margin-ar-ab-10px{margin: 10px 0;}
+.margin-iz-de-10px{margin: 0 10px;}
+
+.margin-15px{margin: 15px;}
+.margin-ar-ab-15px{margin: 15px 0;}
+.margin-iz-de-15px{margin: 0 15px;}
+
+.margin-20px{margin: 20px;}
+.margin-ar-ab-20px{margin: 20px 0;}
+.margin-iz-de-20px{margin: 0 20px;}
+
+.margin-25px{margin: 25px;}
+.margin-ar-ab-25px{margin: 25px 0;}
+.margin-iz-de-25px{margin: 0 25px;}
+
+.padding-5px{padding: 5px;}
+
+.borde-10px{
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 1px solid #000000;
+}

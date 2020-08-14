@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/css-bootstrap/bootstrap.css">
+    <link href="css/css-bootstrap/bootstrap.icon-large.min.css" rel="stylesheet">
+    <link href="js/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/style-2.css">
+    <script src="https://kit.fontawesome.com/e20f78cd09.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="bg-light">
+  <div class="" style="height: 100vh;">
+    <div class="d-flex justify-content-between bg-dark text-white" style="height: 50px;">
+      <div class="" style="display: flex;">
+        <div class="menu_hambug" id="divmenu" onclick="menu_hambug();">
+          <img src="img/menu_hamburguesa.png" alt="" style="width: 25px; height: 25px;" id="menu">
+        </div>
+        <div class="">
+            <h4 class="head-logo">Logo</h4>
+        </div>
+      </div>
+      <div class="">
+          <p style="cursor: pointer;">Administrador<img src="img/usuario.png" alt="" class="img-user"></p>
+      </div>
+    </div>
+
+    <div class="d-flex" style="height: calc(100% - 50px)">
+      <div class="bg-dark nav-respon" id="nav" style="width: 170px;">
+        <nav class="m-2 text-white">
+          <p style="cursor: pointer;" onclick="navigation('t');">Ticket</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('u');">Usuarios</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('e');">Estadisticas</p>
+          <hr>
+          <p style="cursor: pointer;" onclick="navigation('i');">Informes</p>
+        </nav>
+      </div>
+   <!-- ---------------------------------- CONTENIDO DE PAGINA --------------------------------------------- -->
+
+      <div class="d-flex" id="contenido" style="width: calc(100% - 170px);">
+        <table class="table" style="font-size: 15px">
+          <thead class="thead-light">
+            <tr>
+              <th>#</th><th>Nombre Equipo</th><th>Tipo</th><th>Modelo</th><th>Serie</th><th>OS</th><th>RAM</th><th>Procesador</th><th>Disco Duro</th>
+              <th><input type="text" style="width: 120px;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
+              <th>
+                <!-- ///////////////////////////////// -->
+                <!-- FORMULARIO PARA AGREGAR UN EQUIPO -->
+                <!-- ///////////////////////////////// -->
+                <div id="addpc">
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="Nombre de Equipo">
+                    <select class="form-control margin-5px" style="width : 154px; heigth : 1px" id="tipo">
+                      <option selected>Tipo</option>
+                      <option value="DESKTOP">DESKTOP</option>
+                      <option value="LAPTOP">LAPTOP</option>
+                    </select>
+                  </div>
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="Marca">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="Modelo">
+                  </div>
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="N° Serie">
+                    <select class="form-control margin-5px" id="tipo">
+                      <option selected>OS</option>
+                      <option value="Windows Server">Windows Server</option>
+                      <option value="Windows 7">Windows 7</option>
+                      <option value="Windows 8">Windows 8</option>
+                      <option value="Windows 8.1">Windows 8.1</option>
+                      <option value="Windows 10">Windows 10</option>
+                    </select>
+                  </div>
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="Procesador">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="RAM">
+                    <select class="form-control margin-5px" id="tipo">
+                      <option selected>Disco Duro</option>
+                      <option value="160">160GB</option>
+                      <option value="250">250GB</option>
+                      <option value="320">320GB</option>
+                      <option value="500">500GB</option>
+                      <option value="570">750GB</option>
+                      <option value="1">1T</option>
+                      <option value="1.5">1.5T</option>
+                      <option value="2">2T</option>
+                    </select>
+                  </div>
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="CT Bateria(opcional)">
+                    <input type="text" name="" value="" class="form-control margin-5px" style="width : 154px;" placeholder="HP Part N°">
+                    <input type="text" name="" value="" class="form-control margin-5px" style="width : 154px;" placeholder="HP Spare N°">
+                  </div>
+                  <div class="d-flex">
+                    <input type="text" name="" value="" class="form-control margin-5px" placeholder="CT Cargador(opcional)">
+                    <input type="text" name="" value="" class="form-control margin-5px" style="width : 154px;" placeholder="HP Part N°">
+                    <input type="text" name="" value="" class="form-control margin-5px" style="width : 154px;" placeholder="HP Spare N°">
+                  </div>
+                  <div class="d-flex">
+                    <select class="form-control margin-5px" id="tipo">
+                      <option selected>Posicion</option>
+                      <option value="Antes">Antes</option>
+                      <option value="Despues">Despues</option>
+                    </select>
+                    <select class="form-control margin-5px" id="tipo">
+                      <option selected>Usuario</option>
+                      <option value="user1">user1</option>
+                      <option value="user2">user2</option>
+                      <option value="user3">user3</option>
+                      <option value="user4">user4</option>
+                      <option value="user5">user5</option>
+                    </select>
+                    <select class="form-control margin-5px" id="tipo">
+                      <option selected>Tecnico</option>
+                      <option value="encargado1">encargado1</option>
+                      <option value="encargado2">encargado2</option>
+                      <option value="encargado3">encargado3</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- ////////////////////////////////////// -->
+                <!-- FIN DEL FORMULARIO PARA AGREGAR EQUIPO -->
+                <!-- ////////////////////////////////////// -->
+                <i class="fas fa-plus-square margin-iz-de-10px" id="agregar" style="cursor: pointer;"></i>
+                <i class="fas fa-edit margin-iz-de-10px" style="cursor: pointer;"></i>
+                <i class="fas fa-trash margin-iz-de-10px" style="cursor: pointer;"></i>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- -------------------------------- FIN CONTENIDO DE PAGINA ------------------------------------ -->
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="js/all.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+
+  // VENTANA PARA AGREGAR UN NUEVO EQUIPO ARRIBA O ABAJO DE ...
+    $("#addpc").dialog({
+      width: 600,
+      height: 475,
+      title: "AGREGAR EQUIPO",
+      resizable: false,
+      draggable: false,
+      modal: true,
+      buttons:{
+        "Agregar": function(){
+          alert("Se agrego equipo");
+          $(this).dialog("close");
+        },
+        "Cancelar": function(){
+          $(this).dialog("close");
+        }
+      },
+      autoOpen: false
+    });
+    $("#agregar").click(function(event){
+      $("#addpc").dialog("open");
+    });
+  // FIN DE LA VENTANA PARA AGREGAR UN NUEVO EQUIPO
+
+
+    function alerta1(){
+      alert("se abre un cuadro para agregar un equipo");
+    }
+    function alerta2(){
+      alert("se elimino el/los equipo(s) seleccionados");
+    }
+    function alerta3(){
+      alert("se abre cuadro para editar un equipo");
+    }
+  </script>
+</body>
+</html>
