@@ -203,6 +203,7 @@ function all_equi(){
         <!-- ////////////////////////////////////// -->
           <i class="fas fa-plus-square margin-iz-de-10px" id="agregar" style="cursor: pointer;" onclick="addqe();"></i>
           <i class="fas fa-edit margin-iz-de-10px" style="cursor: pointer;"></i>
+          <i class="fas fa-file-alt margin-iz-de-10px" style="cursor: pointer;"></i>
           <i class="fas fa-trash margin-iz-de-10px" style="cursor: pointer;"></i>
         </th>
       </tr>
