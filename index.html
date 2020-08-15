@@ -124,7 +124,7 @@
           "Cancelar": function(){
             $(this).dialog("close");
           }
-        },
+        }
         // autoOpen: false
       });
       // $("#agregar").click(function(event){
@@ -132,6 +132,111 @@
       // });
     }
     // FIN DE LA VENTANA PARA AGREGAR UN NUEVO EQUIPO
+
+    // VENTANA PARA EDITAR EQUIPO
+    function editeq(){
+      $("#editpc").dialog({
+        width: 600,
+        height: 475,
+        title: "EDITAR EQUIPO",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Guardar": function(){
+            alert("Se edito equipo");
+            $(this).dialog("close");
+          },
+          "Cancelar": function(){
+            $(this).dialog("close");
+          }
+        }
+        //autoOpen: false
+      });
+      //$("#editar").click(function(event){
+      //  $("#editpc").dialog("open");
+      //});
+    }
+    // FIN DE LA VENTANA PARA EDITAR EQUIPO
+
+    // VENTANA PARA INFORME DE EQUIPO
+    function reporteq(){
+      $("#reportpc").dialog({
+        width: 650,
+        height: 580,
+        title: "INFORME DE EQUIPO",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Generar": function(){
+            alert("Se Genero Informe de equipo");
+            $(this).dialog("close");
+          },
+          "Cancelar": function(){
+            $(this).dialog("close");
+          }
+        },
+        //autoOpen: false
+      });
+      //$("#informe").click(function(event){
+      //  $("#reportpc").dialog("open");
+      //});
+    }
+    // FIN DE LA VENTANA PARA INFORME DE EQUIPO
+
+    // VENTANA DE CARGO DE ENTREGA DE EQUIPO
+    function giveeq(){
+      $("#givepc").dialog({
+        width: 600,
+        height: 600,
+        title: "ENTREGA DE EQUIPO",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Generar": function(){
+            alert("Se genero el cargo de equipo");
+            $(this).dialog("close");
+          },
+          "Cancelar": function(){
+            $(this).dialog("close");
+          }
+        },
+        //autoOpen: false
+      });
+      //$("#cargo").click(function(event){
+      //  $("#givepc").dialog("open");
+      //});
+    }
+    // FIN DE LA VENTANA DE CARGO DE ENTREGA DE EQUIPO
+
+    // VENTANA PARA ELIMINAR EQUIPO ...
+    function deleteeq(){
+      $("#deletepc").dialog({
+        width: 380,
+        height: 180,
+        title: "ELIMINAR EQUIPO",
+        resizable: false,
+        draggable: false,
+        modal: true,
+        buttons:{
+          "Eliminar": function(){
+            alert("Se elimino el equipo");
+            $(this).dialog("close");
+          },
+          "Cancelar": function(){
+            $(this).dialog("close");
+          }
+        },
+        //autoOpen: false
+      });
+      //$("#eliminar").click(function(event){
+      //  $("#deletepc").dialog("open");
+      //});
+    }
+    // FIN DE LA VENTANA PARA ELIMINAR EQUIPO
+
 
     function comment(nt){
       var comment = document.getElementById('comment').value;
