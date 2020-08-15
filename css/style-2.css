@@ -104,28 +104,36 @@ hr{
 }
 
 /* //////// PERSONALIZAR LA BARRA DE DESPLAZAMIENTO //////// */
-.contenedor::-webkit-scrollbar {
+.barra-desplazamiento::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 
-.contenedor::-webkit-scrollbar:vertical {
+.barra-desplazamiento::-webkit-scrollbar:vertical {
     width:10px;
 }
 
-.contenedor::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+.barra-desplazamiento::-webkit-scrollbar-button:increment,.barra-desplazamiento::-webkit-scrollbar-button {
     display: none;
 }
 
-.contenedor::-webkit-scrollbar:horizontal {
+.barra-desplazamiento::-webkit-scrollbar:horizontal {
     height: 10px;
 }
 
-.contenedor::-webkit-scrollbar-thumb {
+.barra-desplazamiento::-webkit-scrollbar-thumb {
     background-color: #797979;
     border-radius: 20px;
     border: 2px solid #f1f2f3;
 }
 
-.contenedor::-webkit-scrollbar-track {
+.barra-desplazamiento::-webkit-scrollbar-track {
     border-radius: 10px;
+}
+
+/* //////////// ESTILO PARA TABLA DIV //////////// */
+.cuadro-element{
+  padding: 0.75rem 1.25rem;
+}
+.cuadro-element-delg{
+  padding: 0.30rem 1.25rem;
 }
