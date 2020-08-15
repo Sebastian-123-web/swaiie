@@ -102,3 +102,30 @@ hr{
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 1px solid #000000;
 }
+
+/* //////// PERSONALIZAR LA BARRA DE DESPLAZAMIENTO //////// */
+.contenedor::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.contenedor::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.contenedor::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+}
+
+.contenedor::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.contenedor::-webkit-scrollbar-track {
+    border-radius: 10px;
+}

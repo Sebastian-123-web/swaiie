@@ -47,7 +47,7 @@ function all_tkt(){
         <img src="img/busqueda.png" alt="" class="img-busqueda btn-light" onclick="search();">
       </div>
       <!-- -------------------------------------------- TICKET ---------------------------------------------- -->
-      <div class="overflow-auto" id="tickets" style="min-width: 400px; height: calc(100% - 65px);"><form>';
+      <div class="overflow-auto contenedor" id="tickets" style="min-width: 400px; height: calc(100% - 65px);"><form>';
   while ($mnt >= 1) {
     $sql = "SELECT * FROM `soli-tk` WHERE `num-tk`=".$mnt;
     $query = mysqli_query($link, $sql);
@@ -113,86 +113,27 @@ function all_est(){
 
 function all_equi(){
   echo '
-  <table class="table" style="font-size: 15px">
-    <thead class="thead-light">
-      <tr>
-        <th>#</th><th>Nombre Equipo</th><th>Tipo</th><th>Modelo</th><th>Serie</th><th>OS</th><th>RAM</th><th>Procesador</th><th>Disco Duro</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
-        <td>
-          <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
-          <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
-          <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
-          <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
-          <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table" style="font-size: 15px">
+      <thead class="thead-light">
+        <tr>
+          <th>#</th><th>Nombre Equipo</th><th>Tipo</th><th>Modelo</th><th>Serie</th><th>OS</th><th>RAM</th><th>Procesador</th><th>Disco Duro</th>
+          <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th><td id="dc">TBGRGAFRCP001</td><td>DESKTOP</td><td>HP COMPAQ 6300 PRO</td><td>MXL2360FBV</td><td>Windows 7 Pro</td><td>6GB</td><td>CORE i5</td><td>500GB</td>
+          <td>
+            <i class="fas fa-plus-square margin-iz-de-5px" id="agregar" style="cursor: pointer;" onclick="addeq();" title="Agregar"></i>
+            <i class="fas fa-edit margin-iz-de-5px" style="cursor: pointer;" onclick="editeq();" title="Editar"></i>
+            <i class="fas fa-file-alt margin-iz-de-5px" style="cursor: pointer;" onclick="reporteq();" title="Enforme de Equipo"></i>
+            <i class="fas fa-file-invoice margin-iz-de-5px" style="cursor: pointer;" onclick="giveeq();" title="Cargo de Entrega"></i>
+            <i class="fas fa-trash margin-iz-de-5px" style="cursor: pointer;" onclick="deleteeq();" title="Eliminar"></i>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
 
   <!-- ///////////////////////////////// -->
   <!-- FORMULARIO PARA AGREGAR UN EQUIPO -->
