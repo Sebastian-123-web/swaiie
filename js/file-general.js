@@ -1,7 +1,10 @@
 function home(){
   let homeView = document.getElementById('contenido');
-  let pagHome = document.createElement('div');
-  pagHome.innerHTML = `
+  let pag_content_remove = document.getElementById('content-child');
+  homeView.removeChild(pag_content_remove);
+  let pag_content = document.createElement('div'); // CREO EL ALAMENTO DIV
+  pag_content.setAttribute("id","content-child"); // AL ELEMENTO DIV LE ASIGNO UN ID Y EL NOMBRE DE ESE ID
+  pag_content.innerHTML = `
     <div class="row"> <!-- LETREROS DE TICKET USUARIOS Y EQUIPOS -->
       <div class="text-light col-lg-4 p-3"> <!--  TICKET -->
         <div class="bg-danger p-3">
@@ -76,9 +79,19 @@ function home(){
       </div>
     </div>
   `;
-  homeView.appendChild(pagHome);
+  homeView.appendChild(pag_content);
 }
 
 function ticket(){
-  alert('Pagina Ticket');
+  let ticketView = document.getElementById('contenido');
+  let pag_content_remove = document.getElementById('content-child');
+  ticketView.removeChild(pag_content_remove);
+  let pag_content = document.createElement('div');
+  pag_content.setAttribute("id","content-child");
+  pag_content.innerHTML = `
+    <div>
+      <h1>Hola Sebastian</h1>
+    </div>
+  `;
+  ticketView.appendChild(pag_content);
 }
