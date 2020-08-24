@@ -1,0 +1,6 @@
+///////////// ID DE SECCIONES DE LA WEB /////////
+
+info-t-u-e ------------------> Letreros de Ticket, Usuario y Equipo
+graphic-notification  -------> Grafico y notificaciones
+ticket-info-ticket-----------> Ticket e Informacion de Ticket
+machine-info-machine---------> Equipos e Informacion de Equipo
