@@ -137,3 +137,15 @@ hr{
 .cuadro-element-delg{
   padding: 0.30rem 1.25rem;
 }
+/* //////////////////////// NEW INDEX.HTML //////////////////////// */
+
+/* BARRA DE DESPLAZAMIENTO Y ENCABEZADO FIJO */
+table {
+  position: relative;
+  border-collapse: collapse;
+}
+thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+}
