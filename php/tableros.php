@@ -1,7 +1,7 @@
 <?php
   include 'conexion.php';
   $sqlt = 'SELECT COUNT(*) FROM ticket';
-  $sqlu = 'SELECT COUNT(*) FROM user';
+  $sqlu = 'SELECT COUNT(*) FROM usuario';
   $sqle = 'SELECT COUNT(*) FROM equipo';
 
   $queryt = mysqli_query($link, $sqlt);
