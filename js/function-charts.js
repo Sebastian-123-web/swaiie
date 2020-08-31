@@ -8,7 +8,6 @@ $(document).ready(function(){
     }
   });
 });
-
 // GRAFICO HOME
 var chartmonth = document.getElementById('graf-vs-mes').getContext('2d');
 var charthome = new Chart(chartmonth, {
