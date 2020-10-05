@@ -2,3 +2,21 @@
   /* background-color: #1c1e21; */
   background-color: #18191a;
 }
+/* MENU PARA CERRAR SESION */
+.submenu{
+  position: absolute;
+  background: #1c1e21;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+.submenu li a{
+  text-decoration: none;
+}
+.menu li:hover .submenu{
+  visibility: visible;
+  opacity: 1;
+}

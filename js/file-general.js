@@ -2,6 +2,17 @@ $(document).ready(function(){
   estadoSesion();
 })
 
+$("#cerrarSesion").click(function(){
+  $.ajax({
+    url : "php/sesion.php",
+    type: "POST",
+    data : { cerrar : "cerrar" },
+    success : function(){
+      window.location.href = "index.php";
+    }
+  })
+});
+
 function tableros(){
   $.ajax({
     url: 'php/tableros.php',
@@ -21,7 +32,13 @@ function estadoSesion(){
     type: "GET",
     success: function(response){
       if(response==1){
-        window.location.href = "index-admin.php";
+        if (window.location.pathname !== "/swaiie/index-admin.php"){
+          window.location.href = "index-admin.php";
+        }
+      }else if(response==0){
+        if (window.location.pathname !== "/swaiie/index.php") {
+          window.location.href = "index.php";
+        }
       }
     }
   })

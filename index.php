@@ -23,7 +23,7 @@
               <p id="falloSesion" class="text-dark"></p>
               <input type="text" name="username" value="" placeholder="Ingrese usuario" class="form-control mb-3">
               <input type="password" name="password" value="" placeholder="Ingrese Contraseña" class="form-control mb-3">
-              <button type="button" id="btnLogin" class="btn btn-info form-control">Ingresar <i class="fas fa-sign-in-alt"></i></button>
+              <button type="button" id="btnLogin" class="btn btn-info btn-block">Ingresar <i class="fas fa-sign-in-alt"></i></button>
             </div>
           </form>
         </div>

@@ -22,11 +22,15 @@
       echo "Usuario y/o Contraseña Incorrecta";
     }
 
+  }elseif(isset($_POST["cerrar"])){
+    session_start();
+    session_unset();
+    session_destroy();
   }else{
     session_start();
     if(isset($_SESSION["login"])) {
       echo 1;
-    }else {
+    }else{
       echo 0;
     }
   }
