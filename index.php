@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -6,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/swaiie-estilos.css">
   </head>
-  <body class="text-light">
+  <body class="text-light bg-black">
     <div class="container d-flex align-items-center" style="height: 100vh;">
       <div class="row">
         <div class="col-lg-8 pr-5">
@@ -14,12 +17,13 @@
           <p class="text-light text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="col-lg-4">
-          <form class="card" action="index.html" method="post">
+          <form id="formLogin" name="formLogin" action="" method="POST" class="card">
             <h3 class="card-header text-dark">Iniciar Sesión</h3>
             <div class="card-body">
+              <p id="falloSesion" class="text-dark"></p>
               <input type="text" name="username" value="" placeholder="Ingrese usuario" class="form-control mb-3">
-              <input type="password" name="passwords" value="" placeholder="Ingrese Contraseña" class="form-control mb-3">
-              <button type="button" name="button" class="btn btn-info form-control">Ingresar <i class="fas fa-sign-in-alt"></i></button>
+              <input type="password" name="password" value="" placeholder="Ingrese Contraseña" class="form-control mb-3">
+              <button type="button" id="btnLogin" class="btn btn-info form-control">Ingresar <i class="fas fa-sign-in-alt"></i></button>
             </div>
           </form>
         </div>
@@ -34,5 +38,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/file-general.js"></script>
   </body>
 </html>

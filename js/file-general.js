@@ -1,25 +1,6 @@
 $(document).ready(function(){
-  document.getElementById('i_t_u_e_g_n').style.display = '';
-  document.getElementById('ticket-info-ticket').style.display = 'none';
-  document.getElementById('equipo-info-equipo').style.display = 'none';
-  tableros();
-});
-
-$("#home").click(function(){
-  document.getElementById('i_t_u_e_g_n').style.display = '';
-  document.getElementById('ticket-info-ticket').style.display = 'none';
-  document.getElementById('equipo-info-equipo').style.display = 'none';
-});
-$("#ticket").click(function(){
-  document.getElementById('i_t_u_e_g_n').style.display = 'none';
-  document.getElementById('ticket-info-ticket').style.display = '';
-  document.getElementById('equipo-info-equipo').style.display = 'none';
-});
-$("#equipo").click(function(){
-  document.getElementById('i_t_u_e_g_n').style.display = 'none';
-  document.getElementById('ticket-info-ticket').style.display = 'none';
-  document.getElementById('equipo-info-equipo').style.display = '';
-});
+  estadoSesion();
+})
 
 function tableros(){
   $.ajax({
@@ -33,3 +14,35 @@ function tableros(){
     }
   });
 }
+
+function estadoSesion(){
+  $.ajax({
+    url : "php/sesion.php",
+    type: "GET",
+    success: function(response){
+      if(response==1){
+        window.location.href = "index-admin.php";
+      }
+    }
+  })
+}
+
+$("#btnLogin").click(function(){
+  var formDataLogin = new FormData(document.getElementById('formLogin'));
+  $.ajax({
+    url : "php/sesion.php",
+    type : "POST",
+    data : formDataLogin,
+    processData : false,
+    contentType : false,
+    success : function(response){
+      if(response=="admin" || response=="user"){
+        window.location.href = "index-admin.php";
+      }else{
+        var falloSesion = document.getElementById('falloSesion');
+        falloSesion.innerHTML = response;
+      }
+    }
+  });
+  document.getElementById('formLogin').reset();
+})
