@@ -5,10 +5,12 @@
   class ClassName extends AnotherClass
   {
 
-    function __construct(argument)
-    {
-      // code...
+    function __IniciarSesion(argument){
+
+    }
+    function __CerrarSesion(argument){
+      
     }
   }
-  
+
 ?>
