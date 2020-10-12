@@ -32,11 +32,11 @@ function estadoSesion(){
     type: "GET",
     success: function(response){
       if(response==1){
-        if (window.location.pathname !== "/swaiie/index-admin.php"){
+        if(window.location.pathname !== "/swaiie/index-admin.php"){
           window.location.href = "index-admin.php";
         }
       }else if(response==0){
-        if (window.location.pathname !== "/swaiie/index.php") {
+        if(window.location.pathname !== "/swaiie/index.php"){
           window.location.href = "index.php";
         }
       }
