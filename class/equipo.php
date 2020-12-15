@@ -9,7 +9,7 @@
     }
 
     public function mostrarEquipo(){
-      $sql = 'SELECT * FROM `equipo`';
+      $sql = "";
     }
   }
 
