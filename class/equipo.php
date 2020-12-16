@@ -1,7 +1,4 @@
 <?php
-  /**
-   *
-   */
   class equipoComputo{
 
     function __construct(){
@@ -12,5 +9,4 @@
       $sql = "";
     }
   }
-
 ?>
