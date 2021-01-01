@@ -3,3 +3,10 @@ LADO DEL CLIENTE
 
 input ---> pattern="[A-Za-z0-9_-]{1,15}"
 input ---> required
+
+TODOS LOS PROCESADORES
+
+Core i3
+Core i5
+Core i7
+Core i9
