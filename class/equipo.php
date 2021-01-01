@@ -1,5 +1,5 @@
 <?php
-  class equipoComputo{
+  class EquipoComputo{
 
     function __construct(){
 
