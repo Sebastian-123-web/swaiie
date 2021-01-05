@@ -6,7 +6,7 @@
     }
     //  AGREGAR EQUIPO A LA BASE DE DATOS
     public function AgregarEquipo(){
-      
+
     }
 
 
@@ -53,14 +53,6 @@
     }
 
 
-    //  ELIMINAR EQUIPO DE LA BASE DE DATOS
-    public function EliminarEquipo($id_equipo){
-      include 'conexion.php';
-      $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
-      $query = mysqli_query($link, $sql);
-    }
-
-
     //  EDITAR EQUIPO DE LA BASE DE DATOS
     public function EditarEquipo($id_equipo,$id_equipo_new,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento,$id_user){
       include 'conexion.php';
@@ -69,6 +61,14 @@
         SET `id_equipo`='$id_equipo_new' , `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `mantenimiento`='$mantenimiento' , `id_user`='$id_user'
         WHERE `equipo`.`id_equipo`='$id_equipo'
       ";
+      $query = mysqli_query($link, $sql);
+    }
+
+
+    //  ELIMINAR EQUIPO DE LA BASE DE DATOS
+    public function EliminarEquipo($id_equipo){
+      include 'conexion.php';
+      $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
       $query = mysqli_query($link, $sql);
     }
   }
