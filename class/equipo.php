@@ -4,6 +4,18 @@
     function __construct(){
 
     }
+    //  AGREGAR EQUIPO A LA BASE DE DATOS
+    public function AgregarEquipo(){
+      
+    }
+
+
+    // AGREGAR COMPONENTE A LA BASE DE DATOS
+    public function AgregarComponente(){
+      $sql = "INSERT INTO `cpu` (`id_cpu`, `cpu`) VALUES (NULL, 'Ryzen 5')";
+    }
+
+
     //  MOSTRAR EQUIPO DE LA BASE DE DATOS
     public function MostrarEquipo(){
       include 'conexion.php';
@@ -40,12 +52,14 @@
       echo $send;
     }
 
+
     //  ELIMINAR EQUIPO DE LA BASE DE DATOS
     public function EliminarEquipo($id_equipo){
       include 'conexion.php';
       $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
       $query = mysqli_query($link, $sql);
     }
+
 
     //  EDITAR EQUIPO DE LA BASE DE DATOS
     public function EditarEquipo($id_equipo,$id_equipo_new,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento,$id_user){
@@ -56,11 +70,6 @@
         WHERE `equipo`.`id_equipo`='$id_equipo'
       ";
       $query = mysqli_query($link, $sql);
-    }
-
-    // AGREGAR EQUIPO A LA BASE DE DATOS
-    public function AgregarEquipo(){
-
     }
   }
   //$eq = new EquipoComputo();
