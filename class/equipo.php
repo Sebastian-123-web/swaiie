@@ -44,16 +44,17 @@
       $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
       $query = mysqli_query($link, $sql);
     }
-    public function EditarEquipo($id_equipo,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software){
+    public function EditarEquipo($id_equipo,$id_equipo_new,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento){
       include 'conexion.php';
       $sql = "
         UPDATE `equipo`
-        SET `id_equipo`='$id_equipo',`nom_equipo`='$nom_equipo',`ram`='$ram',`disco`='$disco',`id_mm`='$id_mm',`id_os` = '$id_os', `id_cpu` = '$id_cpu',`id_tipo`='$id_tipo',`id_antivirus`='$id_antivirus',`id_software`='$id_software',`mantenimiento`='$mantenimiento',`id_user` = 'rbanagasta'
-        WHERE `equipo`.`id_equipo` = 'GEJM351F'
+        SET `id_equipo`='$id_equipo_new' , `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `mantenimiento`='$mantenimiento' , `id_user`='rbanagasta'
+        WHERE `equipo`.`id_equipo`='GEJM3517'
       ";
       $query = mysqli_query($link, $sql);
     }
   }
-  //$eq = new EquipoComputo();
+  $eq = new EquipoComputo();
   //$eq->mostrarEquipo();
+  $eq->EditarEquipo('GEJM3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1',' ');
 ?>
