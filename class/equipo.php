@@ -49,12 +49,12 @@
       $sql = "
         UPDATE `equipo`
         SET `id_equipo`='$id_equipo_new' , `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `mantenimiento`='$mantenimiento' , `id_user`='$id_user'
-        WHERE `equipo`.`id_equipo`='GEJM3517'
+        WHERE `equipo`.`id_equipo`='$id_equipo'
       ";
       $query = mysqli_query($link, $sql);
     }
   }
   $eq = new EquipoComputo();
   //$eq->mostrarEquipo();
-  $eq->EditarEquipo('GEJM3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1',' ','rbanagasta');
+  $eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
 ?>
