@@ -4,8 +4,8 @@
     function __construct(){
 
     }
-
-    public function mostrarEquipo(){
+    //  MOSTRAR EQUIPO DE LA BASE DE DATOS
+    public function MostrarEquipo(){
       include 'conexion.php';
       $sql = "
         SELECT `equipo`.`id_equipo`,`equipo`.`nom_equipo`,`equipo`.`ram`,`equipo`.`disco`, `marca_modelo`.`mm`, `os`.`os`, `cpu`.`cpu`, `tipo`.`tipo`, `antivirus`.`antivirus`, `software`.`software`, `equipo`.`mantenimiento`, `usuario`.`id_user`
@@ -39,11 +39,15 @@
       $send = json_encode($result);
       echo $send;
     }
+
+    //  ELIMINAR EQUIPO DE LA BASE DE DATOS
     public function EliminarEquipo($id_equipo){
       include 'conexion.php';
       $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
       $query = mysqli_query($link, $sql);
     }
+
+    //  EDITAR EQUIPO DE LA BASE DE DATOS
     public function EditarEquipo($id_equipo,$id_equipo_new,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento,$id_user){
       include 'conexion.php';
       $sql = "
@@ -53,8 +57,15 @@
       ";
       $query = mysqli_query($link, $sql);
     }
+
+    // AGREGAR EQUIPO A LA BASE DE DATOS
+    public function AgregarEquipo(){
+
+    }
   }
-  $eq = new EquipoComputo();
-  //$eq->mostrarEquipo();
-  $eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
+  //$eq = new EquipoComputo();
+  //$eq->MostrarEquipo();
+  //$eq->EliminarEquipo();
+  //$eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
+  //$eq->AgregarEquipo();
 ?>
