@@ -5,14 +5,13 @@
 
     }
     //  AGREGAR EQUIPO A LA BASE DE DATOS
-    public function AgregarEquipo(){
-
-    }
-
-
-    // AGREGAR COMPONENTE A LA BASE DE DATOS
-    public function AgregarComponente(){
-      $sql = "INSERT INTO `cpu` (`id_cpu`, `cpu`) VALUES (NULL, 'Ryzen 5')";
+    public function AgregarEquipo($id_equipo,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento,$id_user){
+      include 'conexion.php';
+      $sql = "
+        INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `id_mm`, `id_os`, `id_cpu`, `id_tipo`, `id_antivirus`, `id_software`, `mantenimiento`, `id_user`)
+        VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$id_mm', '$id_os', '$id_cpu', '$id_tipo', '$id_antivirus', '$id_software', '$mantenimiento', '$id_user');
+      ";
+      mysqli_query($link, $sql);
     }
 
 
@@ -61,7 +60,7 @@
         SET `id_equipo`='$id_equipo_new' , `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `mantenimiento`='$mantenimiento' , `id_user`='$id_user'
         WHERE `equipo`.`id_equipo`='$id_equipo'
       ";
-      $query = mysqli_query($link, $sql);
+      mysqli_query($link, $sql);
     }
 
 
@@ -69,12 +68,12 @@
     public function EliminarEquipo($id_equipo){
       include 'conexion.php';
       $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
-      $query = mysqli_query($link, $sql);
+      mysqli_query($link, $sql);
     }
   }
   //$eq = new EquipoComputo();
   //$eq->MostrarEquipo();
   //$eq->EliminarEquipo();
   //$eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','2','3','3','2','1','1','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
-  //$eq->AgregarEquipo();
+  //$eq->AgregarEquipo('RFD43D1FD3','TBGRGAFSI001','32','2000','2','3','3','2','1','1','Equipo formateado','nin');
 ?>
