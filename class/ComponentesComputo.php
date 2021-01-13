@@ -2,9 +2,7 @@
   class ComponentesComputo
   {
 
-    function __construct()
-    {
-      // code...
+    function __construct(){
     }
 
     public function AgregarComponente(){
