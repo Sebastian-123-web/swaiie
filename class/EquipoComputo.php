@@ -2,8 +2,9 @@
   class EquipoComputo{
 
     function __construct(){
-
     }
+
+    
     //  AGREGAR EQUIPO A LA BASE DE DATOS
     public function AgregarEquipo($id_equipo,$nom_equipo,$ram,$disco,$id_mm,$id_os,$id_cpu,$id_tipo,$id_antivirus,$id_software,$mantenimiento,$id_user){
       include 'conexion.php';
