@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>Swaiie</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/swaiie-estilos.css">
+    <link rel="stylesheet" href="../css/swaiie-estilos.css">
   </head>
   <body>
     <div class="d-flex">
       <nav class="bg-black navbar align-items-start" style="height: 100vh;">
         <div class="">
           <ul class="navbar-nav flex-column">
-            <li class="nav-item mx-4 my-2"><img src="img/logo-swaiie-3.png" alt="" style="width: 100px"></li>
-            <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
+            <li class="nav-item mx-4 my-2"><img src="../img/logo-swaiie-3.png" alt="" style="width: 100px"></li>
+            <li class="nav-item mx-4"><a href="../index-admin.php" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-ticket-alt" style="width: 25px;"></i>Ticket</a></li>
-            <li class="nav-item mx-4"><a href="navegacion/equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Equipo</a></li>
+            <li class="nav-item mx-4"><a href="equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Equipo</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-chart-bar" style="width: 25px;"></i>Estadisticas</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-cogs" style="width: 25px;"></i>Configuración</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-info" style="width: 25px; height: 16px;"></i>About</a></li>
@@ -43,7 +43,51 @@
           </ul>
         </nav>
         <div class="">
-
+          <div class="p-3" style="width: 60%; height: calc(100vh - 56px)">
+            <div class="">
+              <h1 class="h4">Inventario de equipos</h1>
+            </div>
+            <div class="" style="border: 1px solid #dee2e6">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>N° Serie</th>
+                    <th>Nombre Equipo</th>
+                    <th>Modelo</th>
+                    <th>Procesador</th>
+                    <th>Usuario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RFD43D1FD</td>
+                    <td>TBGRGAFSI001</td>
+                    <td>HP Compaq 8200</td>
+                    <td>Intel Core i5</td>
+                    <td>rbanagasta</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RFD43D1FD</td>
+                    <td>TBGRGAFSI001</td>
+                    <td>HP Compaq 8200</td>
+                    <td>Intel Core i5</td>
+                    <td>rbanagasta</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RFD43D1FD</td>
+                    <td>TBGRGAFSI001</td>
+                    <td>HP Compaq 8200</td>
+                    <td>Intel Core i5</td>
+                    <td>rbanagasta</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
