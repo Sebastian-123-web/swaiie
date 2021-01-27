@@ -38,8 +38,8 @@
 
     }
 
-    public function MostrarComponentes(){
-      
+    public function MostrarComponente(){
+
     }
   }
 
