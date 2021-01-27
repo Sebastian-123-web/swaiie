@@ -45,13 +45,13 @@
         <div class="">
           <div class="p-3" style="width: 60%; height: calc(100vh - 56px)">
             <div class="">
-              <h1 class="h4">Inventario de equipos</h1>
+              <h1 class="h4 mb-3">Inventario de equipos</h1>
             </div>
             <div class="" style="border: 1px solid #dee2e6">
               <table class="table table-sm">
                 <thead>
                   <tr>
-                    <th>#</th>
+                    <th><input type="checkbox" name="" value=""></th>
                     <th>N° Serie</th>
                     <th>Nombre Equipo</th>
                     <th>Modelo</th>
@@ -61,7 +61,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><input type="checkbox" name="" value=""></th>
                     <td>RFD43D1FD</td>
                     <td>TBGRGAFSI001</td>
                     <td>HP Compaq 8200</td>
@@ -69,7 +69,7 @@
                     <td>rbanagasta</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><input type="checkbox" name="" value=""></th>
                     <td>RFD43D1FD</td>
                     <td>TBGRGAFSI001</td>
                     <td>HP Compaq 8200</td>
@@ -77,7 +77,7 @@
                     <td>rbanagasta</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><input type="checkbox" name="" value=""></th>
                     <td>RFD43D1FD</td>
                     <td>TBGRGAFSI001</td>
                     <td>HP Compaq 8200</td>
