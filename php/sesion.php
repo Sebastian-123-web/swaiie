@@ -3,7 +3,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    include '../class/conexion.php';
+    include 'conexion.php';
     $sql = 'SELECT `tipo_usuario` FROM `usuario` WHERE `id_user`="'.$username.'" AND `password`="'.$password.'"';
     $query = mysqli_query($link, $sql);
     $row = mysqli_fetch_array($query);
