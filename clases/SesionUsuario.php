@@ -1,7 +1,7 @@
 <?php
   class SesionUsuario{
 
-    public function sesionAutentificacion($usuario,$contraseña){
+    public function SesionAutentificacion($usuario,$contraseña){
       include 'conexion.php';
       $sql = 'SELECT * FROM `usuario` WHERE `id_user`="'.$usuario.'" AND `password`="'.$contraseña.'"';
       $query = mysqli_query($link, $sql);
@@ -22,7 +22,7 @@
         //echo 'sesion iniciada '.$_SESSION["usuario"]["id_user"];
       }
     }
-    public function sesionEstado(){
+    public function SesionEstado(){
       session_start();
       if(!isset($_SESSION["usuario"]["id_user"])){
         echo 1;
@@ -30,7 +30,7 @@
         echo 2;
       }
     }
-    public function sesionCerrada(){
+    public function SesionCerrada(){
       session_start();
       session_unset();
       session_destroy();
@@ -39,9 +39,9 @@
   }
 
   //$sesion = new SesionUsuario();
-  //$sesion->sesionAutentificacion('rbanagasta', 'RB2020');
-  //$sesion->sesionEstado();
-  //$sesion->sesionCerrada();
+  //$sesion->SesionAutentificacion('rbanagasta', 'RB$2020-');
+  //$sesion->SesionEstado();
+  //$sesion->SesionCerrada();
 
   //var_dump($row);
   //var_dump($query);exit;
