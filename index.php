@@ -17,12 +17,12 @@
           <p class="text-light text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="col-lg-4">
-          <form id="formLogin" name="formLogin" action="" method="POST" class="card">
+          <form id="formLogin" name="formLogin" method="POST" class="card">
             <h3 class="card-header text-dark">Iniciar Sesión</h3>
             <div class="card-body">
               <p id="falloSesion" class="text-dark"></p>
-              <input type="text" name="username" value="" placeholder="Ingrese usuario" class="form-control mb-3">
-              <input type="password" name="password" value="" placeholder="Ingrese Contraseña" class="form-control mb-3">
+              <input type="text" name="user" value="" placeholder="Ingrese usuario" class="form-control mb-3">
+              <input type="password" name="pass" value="" placeholder="Ingrese Contraseña" class="form-control mb-3">
               <button type="button" id="btnLogin" class="btn btn-info btn-block">Ingresar <i class="fas fa-sign-in-alt"></i></button>
             </div>
           </form>

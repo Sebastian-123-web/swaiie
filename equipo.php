@@ -43,7 +43,33 @@
           </ul>
         </nav>
         <div class="">
-
+          <div class="col-lg-8">
+            <h1 class="h3">Inventario</h1>
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>N° serie</th>
+                  <th>Nombre Equipo</th>
+                  <th>Modelo</th>
+                  <th>Sistema Operativo</th>
+                  <th>Usuario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

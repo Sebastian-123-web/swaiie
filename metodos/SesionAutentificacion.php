@@ -1,11 +1,12 @@
 <?php
-
-  if(isset($_POST["username"]) && isset($_POST["password"])){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+  $usuario = $_POST['user'];
+  $contraseña = $_POST['pass'];
+  if(isset($usuario) && isset($contraseña)){
     include '../clases/SesionUsuario.php';
     $sesion = new SesionUsuario();
-    $sesion->SesionAutentificacion($username, $password);
+    $sesion->SesionAutentificacion($usuario,$contraseña);
+    echo 2;
+  }else{
+    echo 1;
   }
-
 ?>

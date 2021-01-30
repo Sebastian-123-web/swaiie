@@ -45,7 +45,7 @@ function estadoSesion(){
 }
 
 $("#btnLogin").click(function(){
-  var formDataLogin = new FormData(document.getElementById('formLogin'));
+  var formDataLogin = new FormData(document.getElementById('formLogi'));
   $.ajax({
     url : "php/sesion.php",
     type : "POST",
