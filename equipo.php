@@ -12,7 +12,7 @@
         <div class="">
           <ul class="navbar-nav flex-column">
             <li class="nav-item mx-4 my-2"><img src="img/logo-swaiie-3.png" alt="" style="width: 100px"></li>
-            <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
+            <li class="nav-item mx-4"><a href="admin.php" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-ticket-alt" style="width: 25px;"></i>Ticket</a></li>
             <li class="nav-item mx-4"><a href="equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Equipo</a></li>
             <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-chart-bar" style="width: 25px;"></i>Estadisticas</a></li>
@@ -42,33 +42,126 @@
             </li>
           </ul>
         </nav>
-        <div class="">
+        <div class="d-flex">
           <div class="col-lg-8">
-            <h1 class="h3">Inventario</h1>
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>N° serie</th>
-                  <th>Nombre Equipo</th>
-                  <th>Modelo</th>
-                  <th>Sistema Operativo</th>
-                  <th>Usuario</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="d-flex justify-content-between my-3">
+              <h1 class="h3">Inventario</h1>
+              <div class="d-flex">
+                <input type="text" name="filtro" value="" placeholder="Filtro" class="form-control">
+                <h3 class="mx-2"><i class="fas fa-search"></i></h3>
+                <h3 class="mx-2"><i class="fas fa-plus"></i></h3>
+                <h3 class="mx-2"><i class="fas fa-trash"></i></h3>
+              </div>
+            </div>
+            <div style="height: calc(100vh - 130px)" class="overflow-auto">
+              <table class="table table-sm" style="border: 1px solid #dee2e6">
+                <thead>
+                  <tr>
+                    <th class="px-2"><input type="checkbox" name="" value=""></th>
+                    <th>N° serie</th>
+                    <th>Nombre Equipo</th>
+                    <th>Modelo</th>
+                    <th>Sistema Operativo</th>
+                    <th>Usuario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="px-2"><input type="checkbox" name="" value=""></th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th class="px-2"><input type="checkbox" name="" value=""></th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th class="px-2"><input type="checkbox" name="" value=""></th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Otto</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-4" style="height: calc(100vh - 56px)">
+            <h1 class="h3 my-3">Información de Equipo</h1>
+            <div class="">
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">N° Serie</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Nombre de Equipo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">Marca y Modelo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Sistema Operativo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">Memoria RAM</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Capacidad de Disco</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">N° Serie</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Nombre de Equipo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">N° Serie</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Nombre de Equipo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="mr-2">
+                  <p class="mb-1">N° Serie</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
+                </div>
+                <div class="">
+                  <p class="mb-1">Nombre de Equipo</p>
+                  <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
+                </div>
+              </div>
+              <div class="">
+                <button type="button" name="button" class="btn btn-info w-25"><i class="fas fa-redo-alt"></i></button>
+                <button type="button" name="button" class="btn btn-danger w-25"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
