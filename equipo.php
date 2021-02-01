@@ -68,19 +68,19 @@
                 <tbody>
                   <tr>
                     <th class="px-2"><input type="checkbox" name="" value=""></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
+                    <td>REGSD654FRH</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
                   </tr>
                   <tr>
                     <th class="px-2"><input type="checkbox" name="" value=""></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
+                    <td>DS6G5S4DS56</td>
+                    <td>TBGROMGMMD003</td>
+                    <td>HP PROBOOK 4430S</td>
+                    <td>Windows 7 Pro</td>
+                    <td>orequejo</td>
                   </tr>
                   <tr>
                     <th class="px-2"><input type="checkbox" name="" value=""></th>
@@ -129,37 +129,37 @@
               </div>
               <div class="d-flex mb-4">
                 <div class="mr-2">
-                  <p class="mb-1">N° Serie</p>
+                  <p class="mb-1">Procesador</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
                 </div>
                 <div class="">
-                  <p class="mb-1">Nombre de Equipo</p>
+                  <p class="mb-1">Tipo de Equipo</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
                 </div>
               </div>
               <div class="d-flex mb-4">
                 <div class="mr-2">
-                  <p class="mb-1">N° Serie</p>
+                  <p class="mb-1">Antivirus</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
                 </div>
                 <div class="">
-                  <p class="mb-1">Nombre de Equipo</p>
+                  <p class="mb-1">Software</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
                 </div>
               </div>
               <div class="d-flex mb-4">
                 <div class="mr-2">
-                  <p class="mb-1">N° Serie</p>
+                  <p class="mb-1">Mantenimiento</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="N° Serie">
                 </div>
                 <div class="">
-                  <p class="mb-1">Nombre de Equipo</p>
+                  <p class="mb-1">Usuario Asignado</p>
                   <input type="text" name="" value="REGSD654FRH" class="form-control w-100" placeholder="Nombre de Equipo">
                 </div>
               </div>
-              <div class="">
-                <button type="button" name="button" class="btn btn-info w-25"><i class="fas fa-redo-alt"></i></button>
-                <button type="button" name="button" class="btn btn-danger w-25"><i class="fas fa-trash"></i></button>
+              <div class="d-flex">
+                <button type="button" name="button" class="btn btn-info w-50 mr-3"><i class="fas fa-redo-alt"></i></button>
+                <button type="button" name="button" class="btn btn-danger w-50"><i class="fas fa-trash"></i></button>
               </div>
             </div>
           </div>
