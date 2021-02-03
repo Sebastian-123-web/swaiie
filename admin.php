@@ -31,11 +31,49 @@
         </div>
         <div class="container-fluid">
           <div class="row">
-            <div class="">
-
+            <div class="col-lg-8">
+              <div class="d-flex justify-content-between">
+                <h1 class="h3">Inventario</h1>
+                <div class="d-flex">
+                  <input type="text" name="" value="" placeholder="Filtro" class="form-control">
+                  <h3 class="mx-2"><i class="fas fa-search"></i></h3>
+                  <h3 class="mx-2"><i class="fas fa-plus"></i></h3>
+                  <h3 class="mx-2"><i class="fas fa-trash"></i></h3>
+                </div>
+              </div>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th><input type="checkbox" name="" value=""></th>
+                    <th>N° Serie</th>
+                    <th>Nombre Equipo</th>
+                    <th>Modelo</th>
+                    <th>Sistema Operativo</th>
+                    <th>Asignación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th><input type="checkbox" name="" value=""></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value=""></th>
+                    <td>DSGMHJ54MN56</td>
+                    <td>TBGROMGMMD003</td>
+                    <td>HP PROBOOK 4430S</td>
+                    <td>Windows 7 Pro</td>
+                    <td>orequejo</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="">
-
+            <div class="col-lg-4 bg-dark">
+              hola
             </div>
           </div>
         </div>
