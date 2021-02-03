@@ -32,7 +32,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-8">
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between p-2">
                 <h1 class="h3">Inventario</h1>
                 <div class="d-flex">
                   <input type="text" name="" value="" placeholder="Filtro" class="form-control">
