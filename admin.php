@@ -31,55 +31,150 @@
         </div>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-9 pl-5 pr-0 py-3">
               <div class="d-flex justify-content-between p-2">
                 <h1 class="h3">Inventario</h1>
                 <div class="d-flex">
-                  <input type="text" name="" value="" placeholder="Filtro" class="form-control">
-                  <h3 class="mx-2"><i class="fas fa-search"></i></h3>
-                  <h3 class="mx-2"><i class="fas fa-plus"></i></h3>
-                  <h3 class="mx-2"><i class="fas fa-trash"></i></h3>
+                  <div class="mr-2">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-dark btn-group-sm" type="button"><i class="fas fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-group pb-1" role="group" aria-label="Basic example">
+                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
+                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-trash"></i></button>
+                  </div>
                 </div>
               </div>
-              <table class="table table-sm">
+              <table class="table" style="border: 1px solid #dee2e6">
                 <thead>
                   <tr>
-                    <th><input type="checkbox" name="" value=""></th>
+                    <th><input type="checkbox" name="" value="" class="ml-1" id="selectall"></th>
                     <th>N° Serie</th>
                     <th>Nombre Equipo</th>
                     <th>Modelo</th>
                     <th>Sistema Operativo</th>
                     <th>Asignación</th>
+                    <th> </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th><input type="checkbox" name="" value=""></th>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
                     <td>DS6GF5S4G</td>
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
                     <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
                   </tr>
                   <tr>
-                    <th><input type="checkbox" name="" value=""></th>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
                     <td>DSGMHJ54MN56</td>
                     <td>TBGROMGMMD003</td>
                     <td>HP PROBOOK 4430S</td>
                     <td>Windows 7 Pro</td>
                     <td>orequejo</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+                    <td>DS6GF5S4G</td>
+                    <td>TBGRGAFSI002</td>
+                    <td>HP COMPAQ 8200</td>
+                    <td>Windows 7 Pro</td>
+                    <td>rbanagasta</td>
+                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
                   </tr>
                 </tbody>
               </table>
+
+              <!-- MODAL PARA ABRIR LA INFORMACION DEL EQUIPO -->
+              <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenteredLabel">Información de Equipo</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="card">
+                        <div class="card-body d-flex">
+                          <p class="my-auto mr-2">Serie:</p>
+                          <input type="text" name="" value="" class="form-control w-50">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-4 bg-dark">
-              hola
+            <div class="col-lg-3 py-3">
+              <h1 class="h3 p-1 mb-3">Agregar componente</h1>
+              <div class="card">
+                <div class="card-body">
+                  hola
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- FONTAWESOME -->
@@ -92,5 +187,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- SWAIIE -->
     <script src="js/SesionUsuario.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $("#selectall").on("click", function() {
+      $(".case").prop("checked", this.checked);
+    });
+    </script>
   </body>
 </html>

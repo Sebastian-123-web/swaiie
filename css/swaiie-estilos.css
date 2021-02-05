@@ -2,6 +2,12 @@
   /* background-color: #1c1e21; */
   background-color: #18191a;
 }
+.bg-swaiie{
+  background-color: #fb5c5c;
+}
+.text-swaiie{
+  color: #fb5c5c;
+}
 /* MENU PARA CERRAR SESION */
 .submenu{
   position: absolute;
