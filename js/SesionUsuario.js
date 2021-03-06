@@ -10,7 +10,7 @@ $(document).ready(function(){
       success : function(response){
         console.log(response);
         if(response==2){
-          if(window.location.pathname !== "/swaiie/admin.php" && window.location.pathname !== "/swaiie/equipo.php"){
+          if(window.location.pathname !== "/swaiie/admin.php" && window.location.pathname !== "/swaiie/equipo.php" && window.location.pathname !== "/swaiie/envio_de_datos.php"){
             window.location.href = "admin.php";
           }
         }else if(response==1){

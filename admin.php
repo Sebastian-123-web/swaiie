@@ -16,8 +16,8 @@
         <div>
           <nav>
             <ul class="navbar-nav flex-column">
-              <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
-              <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Inventario</a></li>
+              <li class="nav-item mx-4"><a href="admin.php" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
+              <li class="nav-item mx-4"><a href="equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Inventario</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-ticket-alt" style="width: 25px;"></i>Ticket</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-chart-bar" style="width: 25px;"></i>Estadisticas</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-cogs" style="width: 25px;"></i>Configuración</a></li>
@@ -33,7 +33,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-9 pl-5 pr-0 py-3">
-              <div class="d-flex justify-content-between p-2">
+              <div class="d-flex justify-content-between py-2">
                 <h1 class="h3">Inventario</h1>
                 <div class="d-flex">
                   <div class="mr-2">
