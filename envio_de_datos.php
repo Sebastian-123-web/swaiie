@@ -35,11 +35,90 @@
             <div class="py-2">
               <h1 class="h3">Recopilacion de Datos del Equipo</h1>
             </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Nombre de Equipo</h4>
+            <form class="" action="index.html" method="post">
+              <div class="card">
+                <div class="card-body row">
+                  <div class="col-lg-6 m-0">
+                    <h4 class="card-title">Componentes Fisicos</h4>
+                    <hr style="">
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Procesador</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Capacidad de Disco</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Memoria RAM</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Marca y Modelo</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <h4 class="card-title">Componentes Logicos</h4>
+                    <hr style="">
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Sistema Operativo</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">N° Serie</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Nombre de Equipo</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////////// -->
+                    <div class="d-flex mb-3">
+                      <div class="col-lg-4 my-auto">
+                        <p class="text-right my-auto">Usuario</p>
+                      </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
