@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="css/swaiie-estilos.css">
   </head>
   <body>
+    <?php
+    /*
+      $cpu = $_GET['cpu'];
+      $serial = $_GET['serial'];
+      $discoint = $_GET['disco'];
+      $discogb = (($discoint/1000)/1000)/1000;
+      $modelo = $_GET['modelo'];
+      $ramint = $_GET['ram'];
+      $ramgb = (($ramint/1000)/1000)/1000;
+      $usuario = $_GET['usuario'];
+      $nomequipo = $_GET['nomequipo'];
+      $os = $_GET['os'];
+
+      echo "
+        Procesador: $cpu <br>
+        Serie: $serial <br>
+        Disco: $discogb <br>
+        Modelo: $modelo <br>
+        RAM: $ramgb <br>
+        Usuario: $usuario <br>
+        Nombre Equipo: $nomequipo <br>
+        Sistema Operativo: $os
+      ";
+      */
+    ?>
     <div class="d-flex" style="height: 100vh;">
       <div class="bg-black" style="width: 173px;">
         <div class="py-3 px-4">
@@ -123,31 +148,6 @@
         </div>
       </div>
     </div>
-    <?php
-    /*
-      $cpu = $_GET['cpu'];
-      $serial = $_GET['serial'];
-      $discoint = $_GET['disco'];
-      $discogb = (($discoint/1000)/1000)/1000;
-      $modelo = $_GET['modelo'];
-      $ramint = $_GET['ram'];
-      $ramgb = (($ramint/1000)/1000)/1000;
-      $usuario = $_GET['usuario'];
-      $nomequipo = $_GET['nomequipo'];
-      $os = $_GET['os'];
-
-      echo "
-        Procesador: $cpu <br>
-        Serie: $serial <br>
-        Disco: $discogb <br>
-        Modelo: $modelo <br>
-        RAM: $ramgb <br>
-        Usuario: $usuario <br>
-        Nombre Equipo: $nomequipo <br>
-        Sistema Operativo: $os
-      ";
-      */
-    ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/e20f78cd09.js" crossorigin="anonymous"></script>
