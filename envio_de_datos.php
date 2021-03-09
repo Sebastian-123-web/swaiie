@@ -9,7 +9,6 @@
   </head>
   <body>
     <?php
-    /*
       $cpu = $_GET['cpu'];
       $serial = $_GET['serial'];
       $discoint = $_GET['disco'];
@@ -20,18 +19,18 @@
       $usuario = $_GET['usuario'];
       $nomequipo = $_GET['nomequipo'];
       $os = $_GET['os'];
+      //FORMAR EL PROCESADOR
+      $bmarca = substr($cpu, 0, 5);
+      if($bmarca == 'Intel'){
+        $bmarca2 = substr($cpu, 9, 4);
+        $bfamilia = substr($cpu, 18, 2);
+        $procesador = $bmarca.' '.$bmarca2.' '.$bfamilia;
+        $bgeneracion = substr($cpu, 21, 1);
+        $generation = ' '.$bgeneracion.'° Generacion';
+      }elseif(substr($cpu, 0, 3)=='AMD'){
+        echo "Es AMD";
+      }
 
-      echo "
-        Procesador: $cpu <br>
-        Serie: $serial <br>
-        Disco: $discogb <br>
-        Modelo: $modelo <br>
-        RAM: $ramgb <br>
-        Usuario: $usuario <br>
-        Nombre Equipo: $nomequipo <br>
-        Sistema Operativo: $os
-      ";
-      */
     ?>
     <div class="d-flex" style="height: 100vh;">
       <div class="bg-black" style="width: 173px;">
@@ -71,7 +70,7 @@
                         <p class="text-right my-auto">Procesador</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <input type="text" name="" value="<?php echo $procesador; ?> " style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
