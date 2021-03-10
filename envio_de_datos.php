@@ -9,26 +9,31 @@
   </head>
   <body>
     <?php
-      $cpu = $_GET['cpu'];
-      $serial = $_GET['serial'];
-      $discoint = $_GET['disco'];
-      $discogb = (($discoint/1000)/1000)/1000;
-      $modelo = $_GET['modelo'];
-      $ramint = $_GET['ram'];
-      $ramgb = (($ramint/1000)/1000)/1000;
-      $usuario = $_GET['usuario'];
-      $nomequipo = $_GET['nomequipo'];
-      $os = $_GET['os'];
+      // $cpu = $_GET['cpu'];
+      // $serial = $_GET['serial'];
+      // $discoint = $_GET['disco'];
+      // $discogb = (($discoint/1000)/1000)/1000;
+      // $modelo = $_GET['modelo'];
+      // $ramint = $_GET['ram'];
+      // $ramgb = (($ramint/1000)/1000)/1000;
+      // $usuario = $_GET['usuario'];
+      // $nomequipo = $_GET['nomequipo'];
+      // $os = $_GET['os'];
+      $cpu = "Intel(R) Core(TM) i3-2130 CPU @ 3.40GHz";
+      $serial = "MXL2150ZPZ";
+      $discogb = 499.86770944;
+      $modelo = "HP Compaq 8200 Elite SFF PC";
+      $ramgb = 6.325051392;
+      $usuario = 'TRANSBERPERU\rbanagasta';
+      $nomequipo = "TBGRGAFSI002";
+      $os = "Microsoft Windows 7 Professional |C:\Windows|\Device\Harddisk0\Partition3";
+
       //FORMAR EL PROCESADOR
-      $bmarca = substr($cpu, 0, 5);
-      if($bmarca == 'Intel'){
-        $bmarca2 = substr($cpu, 9, 4);
-        $bfamilia = substr($cpu, 18, 2);
-        $procesador = $bmarca.' '.$bmarca2.' '.$bfamilia;
-        $bgeneracion = substr($cpu, 21, 1);
-        $generation = ' '.$bgeneracion.'° Generacion';
-      }elseif(substr($cpu, 0, 3)=='AMD'){
-        echo "Es AMD";
+      //$bmarca = strpos($cpu, 'Intel');
+      if (strpos($cpu, 'Intel') === false) {
+        echo  "no se encontro";
+      }else{
+        echo "Exito, se encontro";
       }
 
     ?>
@@ -70,7 +75,7 @@
                         <p class="text-right my-auto">Procesador</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="<?php echo $procesador; ?> " style="width: 250px" class="form-control">
+                        <input type="text" name="" value="" style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
