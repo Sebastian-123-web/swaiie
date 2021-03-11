@@ -28,14 +28,63 @@
       $nomequipo = "TBGRGAFSI002";
       $os = "Microsoft Windows 7 Professional |C:\Windows|\Device\Harddisk0\Partition3";
 
-      //FORMAR EL PROCESADOR
-      //$bmarca = strpos($cpu, 'Intel');
-      if (strpos($cpu, 'Intel') === false) {
+      //DAR FORMA AL PROCESADOR
+      $bmarca = strpos($cpu, 'Intel');
+      if ($bmarca === false) {
         echo  "no se encontro";
       }else{
-        echo "Exito, se encontro";
+        $br = str_replace('(R)', '', $cpu);
+        $btm = str_replace('(TM)', '', $br);
+        $procesador = substr($btm, -33, 13);
+        include 'clases/conexion.php';
+        $sql = "SELECT `id_cpu` FROM `cpu` WHERE `cpu`='$procesador'";
+        $query = mysqli_query($link, $sql);
+        $array = mysqli_fetch_array($query);
+        $bgeneracion = substr($btm, -18, 1);
+      }
+      // DAR FORMA AL DISCO DURO
+      $disk = round($discogb);
+      if ($disk <= 160) {
+        $disk = 160;
+      }elseif ($disk >160 && $disk <= 250) {
+        $disk = 250;
+      }elseif ($disk >250 && $disk <= 320) {
+        $disk = 320;
+      }elseif ($disk >320 && $disk <= 500) {
+        $disk = 500;
+      }elseif ($disk >500 && $disk <= 750) {
+        $disk = 750;
+      }elseif ($disk >750 && $disk <= 1000) {
+        $disk = 1000;
+      }elseif ($disk >1000 && $disk <= 1500) {
+        $disk = 1500;
+      }elseif ($disk >1500 && $disk <= 2000) {
+        $disk = 2000;
+      }elseif ($disk >2000 && $disk <= 2500) {
+        $disk = 2500;
+      }elseif ($disk >2500 && $disk <= 3000) {
+        $disk = 3000;
       }
 
+      // DAR FORMA A LA MEMORIA RAM
+      $ramgb = round($ramgb);
+
+      // DAR FORMA AL SISTEMA OPERATIVO
+      $obr = substr($os, -41);
+      $bre = str_replace($obr, '', $os);
+      $osf = str_replace('Microsoft ', '', $bre);
+      $sqlos = "SELECT `id_os` FROM `os` WHERE `os`='$osf'";
+      $queryos = mysqli_query($link, $sqlos);
+      $arrayos = mysqli_fetch_array($queryos);
+
+      //DAR FORMA AL USUARIO
+      $ubi = strpos($usuario, '\\');
+      $tt = strlen($usuario);
+      $bslash = $tt - ($ubi + 1);
+      $usuariot = substr($usuario, -$bslash);
+      $sqlu = "SELECT `id_user` FROM `usuario` WHERE `id_user`='rbanagasta'";
+      $queryu = mysqli_query($link, $sqlu);
+      $arrayu = mysqli_fetch_array($queryu);
     ?>
     <div class="d-flex" style="height: 100vh;">
       <div class="bg-black" style="width: 173px;">
@@ -64,7 +113,7 @@
             <div class="py-2">
               <h1 class="h3">Recopilacion de Datos del Equipo</h1>
             </div>
-            <form class="" action="index.html" method="post">
+            <form id="formAdde" name="formAdde" method="POST" enctype="multipart/form-data">
               <div class="card">
                 <div class="card-body row">
                   <div class="col-lg-6 m-0">
@@ -74,8 +123,21 @@
                       <div class="col-lg-4 my-auto">
                         <p class="text-right my-auto">Procesador</p>
                       </div>
-                      <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                      <div class="col-lg-8 d-flex">
+                        <?php
+                          if (!isset($array[0])) {
+                            echo '
+                              <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
+                            ';
+                          }else{
+                            echo '
+                            <select disabled name="procesador" class="form-control mr-3" style="width: 190px">
+                              <option value="'.$array[0].'">'.$procesador.'</option>
+                            </select>
+                            <input type="text" name="generacion" value="'.$bgeneracion.'" style="width: 45px" class="form-control">
+                            ';
+                          }
+                        ?>
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -84,7 +146,7 @@
                         <p class="text-right my-auto">Capacidad de Disco</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <input type="number" name="disco" value="<?php echo $disk; ?>" style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -93,7 +155,7 @@
                         <p class="text-right my-auto">Memoria RAM</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <input type="number" name="ram" value="<?php echo $ramgb; ?>" style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -102,7 +164,9 @@
                         <p class="text-right my-auto">Marca y Modelo</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <div class="input-group" style="width: 250px">
+                          <input type="text" name="modelo" class="form-control" value="<?php echo $modelo; ?>">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -114,7 +178,19 @@
                         <p class="text-right my-auto">Sistema Operativo</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <?php
+                          if (!isset($arrayos[0])) {
+                            echo '
+                              <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
+                            ';
+                          }else{
+                            echo '
+                            <select disabled name="procesador" class="form-control" style="width: 250px">
+                              <option value="'.$array[0].'">'.$osf.'</option>
+                            </select>
+                            ';
+                          }
+                        ?>
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -123,7 +199,7 @@
                         <p class="text-right my-auto">N° Serie</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <input type="text" name="serie" value="<?php echo $serial; ?>" style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -132,7 +208,7 @@
                         <p class="text-right my-auto">Nombre de Equipo</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <input type="text" name="nombree" value="<?php echo $nomequipo; ?>" style="width: 250px" class="form-control">
                       </div>
                     </div>
                     <!-- ///////////////////////////////////////////////////////// -->
@@ -141,7 +217,19 @@
                         <p class="text-right my-auto">Usuario</p>
                       </div>
                       <div class="col-lg-8">
-                        <input type="text" name="" value="" style="width: 250px" class="form-control">
+                        <?php
+                          if (!isset($arrayu[0])) {
+                            echo '
+                              <input type="text" name="usuario" value="" style="width: 250px" class="form-control">
+                            ';
+                          }else{
+                            echo '
+                            <select disabled name="usuario" class="form-control" style="width: 250px">
+                              <option value="'.$arrayu[0].'">'.$arrayu[0].'</option>
+                            </select>
+                            ';
+                          }
+                        ?>
                       </div>
                     </div>
                   </div>
@@ -167,6 +255,8 @@
     $("#selectall").on("click", function() {
       $(".case").prop("checked", this.checked);
     });
+
+
     </script>
   </body>
 </html>
