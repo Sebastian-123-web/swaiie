@@ -115,123 +115,128 @@
             </div>
             <form id="formAdde" name="formAdde" method="POST" enctype="multipart/form-data">
               <div class="card">
-                <div class="card-body row">
-                  <div class="col-lg-6 m-0">
-                    <h4 class="card-title">Componentes Fisicos</h4>
-                    <hr style="">
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Procesador</p>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-6 m-0">
+                      <h4 class="card-title">Componentes Fisicos</h4>
+                      <hr style="">
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Procesador</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <?php
+                            if (!isset($array[0])) {
+                              echo '
+                                <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
+                              ';
+                            }else{
+                              echo '
+                              <select disabled name="procesador" class="form-control mr-3" style="width: 190px">
+                                <option value="'.$array[0].'">'.$procesador.'</option>
+                              </select>
+                              <input type="text" name="generacion" value="'.$bgeneracion.'" style="width: 45px" class="form-control">
+                              ';
+                            }
+                          ?>
+                        </div>
                       </div>
-                      <div class="col-lg-8 d-flex">
-                        <?php
-                          if (!isset($array[0])) {
-                            echo '
-                              <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
-                            ';
-                          }else{
-                            echo '
-                            <select disabled name="procesador" class="form-control mr-3" style="width: 190px">
-                              <option value="'.$array[0].'">'.$procesador.'</option>
-                            </select>
-                            <input type="text" name="generacion" value="'.$bgeneracion.'" style="width: 45px" class="form-control">
-                            ';
-                          }
-                        ?>
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Capacidad de Disco</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <input type="number" name="disco" value="<?php echo $disk; ?>" style="width: 250px" class="form-control">
+                        </div>
+                      </div>
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Memoria RAM</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <input type="number" name="ram" value="<?php echo $ramgb; ?>" style="width: 250px" class="form-control">
+                        </div>
+                      </div>
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Marca y Modelo</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="input-group" style="width: 250px">
+                            <input type="text" name="modelo" class="form-control" value="<?php echo $modelo; ?>">
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Capacidad de Disco</p>
+                    <div class="col-lg-6">
+                      <h4 class="card-title">Componentes Logicos</h4>
+                      <hr style="">
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Sistema Operativo</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <?php
+                            if (!isset($arrayos[0])) {
+                              echo '
+                                <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
+                              ';
+                            }else{
+                              echo '
+                              <select disabled name="procesador" class="form-control" style="width: 250px">
+                                <option value="'.$array[0].'">'.$osf.'</option>
+                              </select>
+                              ';
+                            }
+                          ?>
+                        </div>
                       </div>
-                      <div class="col-lg-8">
-                        <input type="number" name="disco" value="<?php echo $disk; ?>" style="width: 250px" class="form-control">
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">N° Serie</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <input type="text" name="serie" value="<?php echo $serial; ?>" style="width: 250px" class="form-control">
+                        </div>
                       </div>
-                    </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Memoria RAM</p>
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Nombre de Equipo</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <input type="text" name="nombree" value="<?php echo $nomequipo; ?>" style="width: 250px" class="form-control">
+                        </div>
                       </div>
-                      <div class="col-lg-8">
-                        <input type="number" name="ram" value="<?php echo $ramgb; ?>" style="width: 250px" class="form-control">
-                      </div>
-                    </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Marca y Modelo</p>
-                      </div>
-                      <div class="col-lg-8">
-                        <div class="input-group" style="width: 250px">
-                          <input type="text" name="modelo" class="form-control" value="<?php echo $modelo; ?>">
+                      <!-- ///////////////////////////////////////////////////////// -->
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Usuario</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <?php
+                            if (!isset($arrayu[0])) {
+                              echo '
+                                <input type="text" name="usuario" value="" style="width: 250px" class="form-control">
+                              ';
+                            }else{
+                              echo '
+                              <select disabled name="usuario" class="form-control" style="width: 250px">
+                                <option value="'.$arrayu[0].'">'.$arrayu[0].'</option>
+                              </select>
+                              ';
+                            }
+                          ?>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6">
-                    <h4 class="card-title">Componentes Logicos</h4>
-                    <hr style="">
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Sistema Operativo</p>
-                      </div>
-                      <div class="col-lg-8">
-                        <?php
-                          if (!isset($arrayos[0])) {
-                            echo '
-                              <input type="text" name="procesador" value="" style="width: 250px" class="form-control">
-                            ';
-                          }else{
-                            echo '
-                            <select disabled name="procesador" class="form-control" style="width: 250px">
-                              <option value="'.$array[0].'">'.$osf.'</option>
-                            </select>
-                            ';
-                          }
-                        ?>
-                      </div>
-                    </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">N° Serie</p>
-                      </div>
-                      <div class="col-lg-8">
-                        <input type="text" name="serie" value="<?php echo $serial; ?>" style="width: 250px" class="form-control">
-                      </div>
-                    </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Nombre de Equipo</p>
-                      </div>
-                      <div class="col-lg-8">
-                        <input type="text" name="nombree" value="<?php echo $nomequipo; ?>" style="width: 250px" class="form-control">
-                      </div>
-                    </div>
-                    <!-- ///////////////////////////////////////////////////////// -->
-                    <div class="d-flex mb-3">
-                      <div class="col-lg-4 my-auto">
-                        <p class="text-right my-auto">Usuario</p>
-                      </div>
-                      <div class="col-lg-8">
-                        <?php
-                          if (!isset($arrayu[0])) {
-                            echo '
-                              <input type="text" name="usuario" value="" style="width: 250px" class="form-control">
-                            ';
-                          }else{
-                            echo '
-                            <select disabled name="usuario" class="form-control" style="width: 250px">
-                              <option value="'.$arrayu[0].'">'.$arrayu[0].'</option>
-                            </select>
-                            ';
-                          }
-                        ?>
-                      </div>
-                    </div>
+                  <div class="d-flex justify-content-end">
+                    <input type="submit" name="" value="Agregar" class="btn btn-info mr-5">
                   </div>
                 </div>
               </div>
