@@ -4,10 +4,11 @@
     //  AGREGAR EQUIPO A LA BASE DE DATOS
     public function AgregarEquipo($id_equipo,$nom_equipo,$ram,$disco,$tipo_disco,$id_mm,$id_os,$id_cpu,$generacion,$id_tipo,$id_antivirus,$id_software,$estado,$mantenimiento,$id_user){
       include 'conexion.php';
-      $sql = "
-        INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `tipo_disco`, `id_mm`, `id_os`, `id_cpu`, `generacion`, `id_tipo`, `id_antivirus`, `id_software`, `estado`, `mantenimiento`, `id_user`)
-        VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$tipo_disco', '$id_mm', '$id_os', '$id_cpu','$generacion', '$id_tipo', '$id_antivirus', '$id_software', '$estado', '$mantenimiento', '$id_user');
-      ";
+      $sql = "INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `tipo_disco`, `id_mm`, `id_os`, `id_cpu`, `generacion`, `id_tipo`, `id_antivirus`, `id_software`, `estado`, `mantenimiento`, `id_user`) VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$tipo_disco', '$id_mm', '$id_os', '$id_cpu', '$generacion', '$id_tipo', '$id_antivirus', '$id_software', '$estado', '$mantenimiento', '$id_user');";
+      // $sql = "
+      //   INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `tipo_disco`, `id_mm`, `id_os`, `id_cpu`, `generacion`, `id_tipo`, `id_antivirus`, `id_software`, `estado`, `mantenimiento`, `id_user`)
+      //   VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$tipo_disco', '$id_mm', '$id_os', '$id_cpu','$generacion', '$id_tipo', '$id_antivirus', '$id_software', '$estado', '$mantenimiento', '$id_user');
+      // ";
       mysqli_query($link, $sql);
     }
 
@@ -75,5 +76,5 @@
   //$eq->MostrarEquipo();
   //$eq->EliminarEquipo();
   //$eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','HDD','2','3','3','2Gen','2','1','1','Activo','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
-  $eq->AgregarEquipo('RFD43D1FD3','TBGRGAFSI001','32','2000','HDD','2','3','3','3','2','1','1','Error','Equipo formateado','nin');
+  $eq->AgregarEquipo('NM654GN', 'TBGRGRH', '6', '1000', 'HDD', '1', '10', '3', '4', '2', '1', '1', 'Activo', 'ninguno', 'nin');
 ?>
