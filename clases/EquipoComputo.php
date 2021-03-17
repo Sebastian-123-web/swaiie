@@ -5,10 +5,6 @@
     public function AgregarEquipo($id_equipo,$nom_equipo,$ram,$disco,$tipo_disco,$id_mm,$id_os,$id_cpu,$generacion,$id_tipo,$id_antivirus,$id_software,$estado,$mantenimiento,$id_user){
       include 'conexion.php';
       $sql = "INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `tipo_disco`, `id_mm`, `id_os`, `id_cpu`, `generacion`, `id_tipo`, `id_antivirus`, `id_software`, `estado`, `mantenimiento`, `id_user`) VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$tipo_disco', '$id_mm', '$id_os', '$id_cpu', '$generacion', '$id_tipo', '$id_antivirus', '$id_software', '$estado', '$mantenimiento', '$id_user');";
-      // $sql = "
-      //   INSERT INTO `equipo` (`id_equipo`, `nom_equipo`, `ram`, `disco`, `tipo_disco`, `id_mm`, `id_os`, `id_cpu`, `generacion`, `id_tipo`, `id_antivirus`, `id_software`, `estado`, `mantenimiento`, `id_user`)
-      //   VALUES ('$id_equipo', '$nom_equipo', '$ram', '$disco', '$tipo_disco', '$id_mm', '$id_os', '$id_cpu','$generacion', '$id_tipo', '$id_antivirus', '$id_software', '$estado', '$mantenimiento', '$id_user');
-      // ";
       mysqli_query($link, $sql);
     }
 
@@ -68,13 +64,13 @@
     //  ELIMINAR EQUIPO DE LA BASE DE DATOS
     public function EliminarEquipo($id_equipo){
       include 'conexion.php';
-      $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = $id_equipo";
+      $sql = "DELETE FROM `equipo` WHERE `equipo`.`id_equipo` = '$id_equipo'";
       mysqli_query($link, $sql);
     }
   }
   $eq = new EquipoComputo();
   //$eq->MostrarEquipo();
-  //$eq->EliminarEquipo();
-  //$eq->EditarEquipo('GEJN3517','GEJN3517','TBGRGAFSI007','32','2000','HDD','2','3','3','2Gen','2','1','1','Activo','Aqui va mantenimiento del equipo claro si es que se a hecho','rbanagasta');
-  $eq->AgregarEquipo('NM654GN', 'TBGRGRH', '6', '1000', 'HDD', '1', '10', '3', '4', '2', '1', '1', 'Activo', 'ninguno', 'nin');
+  //$eq->EliminarEquipo('NM654GN');
+  //$eq->EditarEquipo('NM654GN','NM654GN','TBGRGRH','32','2000','HDD','2','3','3','2Gen','2','1','1','Error','No se a hecho mantenimiento','rbanagasta');
+  //$eq->AgregarEquipo('NM654GN', 'TBGRGRH', '6', '1000', 'HDD', '1', '10', '3', '4', '2', '1', '1', 'Activo', 'ninguno', 'nin');
 ?>
