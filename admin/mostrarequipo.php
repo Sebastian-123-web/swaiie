@@ -65,6 +65,8 @@
                       </div>
                     </div>
                     <div class="col-lg-6">
+                      <h3>Componente Logico</h3>
+                      <hr>
                       <div class="d-flex mb-3">
                         <div class="col-lg-4 my-auto">
                           <p class="text-right my-auto">Memoria RAM</p>
