@@ -68,7 +68,7 @@
       mysqli_query($link, $sql);
     }
   }
-  $eq = new EquipoComputo();
+  //$eq = new EquipoComputo();
   //$eq->MostrarEquipo();
   //$eq->EliminarEquipo('NM654GN');
   //$eq->EditarEquipo('NM654GN','NM654GN','TBGRGRH','32','2000','HDD','2','3','3','2Gen','2','1','1','Error','No se a hecho mantenimiento','rbanagasta');

@@ -58,6 +58,7 @@
                     <th>Nombre Equipo</th>
                     <th>Modelo</th>
                     <th>Sistema Operativo</th>
+                    <th>Estado</th>
                     <th>Asignación</th>
                     <th> </th>
                   </tr>
@@ -69,17 +70,19 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="admin\mostrarequipo.php?id_equipo=ABCD123" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
-                    <td>DSGMHJ54MN56</td>
+                    <td>DSGMHHJJ5</td>
                     <td>TBGROMGMMD003</td>
                     <td>HP PROBOOK 4430S</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-info">En Proceso</span></td>
                     <td>orequejo</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -87,8 +90,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-danger">Error</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -96,8 +100,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -105,8 +110,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -114,8 +120,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -123,8 +130,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                   <tr>
                     <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
@@ -132,8 +140,9 @@
                     <td>TBGRGAFSI002</td>
                     <td>HP COMPAQ 8200</td>
                     <td>Windows 7 Pro</td>
+                    <td><span class="badge badge-pill badge-success">Activo</span></td>
                     <td>rbanagasta</td>
-                    <td><button type="button" name="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-cogs"></i></button></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                   </tr>
                 </tbody>
               </table>
