@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Swaiiie - Home</title>
-    <link rel="shortcut icon" href="../img/icono.png">
+    <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/swaiie-estilos.css">
+    <link rel="stylesheet" href="css/swaiie-estilos.css">
   </head>
   <body>
     <div class="d-flex" style="height: 100vh;">
       <div class="bg-black" style="width: 173px;">
         <div class="py-3 px-4">
-          <img src="../img/logo-swaiie-3.png" alt="" style="width: 100px">
+          <img src="img/logo-swaiie-3.png" alt="" style="width: 100px">
         </div>
         <div>
           <nav>
             <ul class="navbar-nav flex-column">
-              <li class="nav-item mx-4"><a href="../admin.php" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
-              <li class="nav-item mx-4"><a href="../equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Inventario</a></li>
+              <li class="nav-item mx-4"><a href="admin.php" class="nav-link text-light"><i class="fas fa-home" style="width: 25px;"></i>Home</a></li>
+              <li class="nav-item mx-4"><a href="equipo.php" class="nav-link text-light"><i class="fas fa-desktop" style="width: 25px;"></i>Inventario</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-ticket-alt" style="width: 25px;"></i>Ticket</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-chart-bar" style="width: 25px;"></i>Estadisticas</a></li>
               <li class="nav-item mx-4"><a href="#" class="nav-link text-light"><i class="fas fa-cogs" style="width: 25px;"></i>Configuración</a></li>
@@ -53,12 +53,29 @@
                       <h3>Componente Fisico</h3>
                       <hr>
                       <div class="d-flex mb-3">
+                        <?php
+                          include 'clases/conexion.php';
+                          $sql = "SELECT * FROM `cpu`";
+                          $query = mysqli_query($link, $sql);
+                          $array = mysqli_fetch_array($query);
+                          $result[] = array();
+                          while($row = mysqli_fetch_array($query)){
+                            $result[] = array(
+                              'id_cpu' => $row['id_cpu'],
+                              'cpu' => $row['cpu']
+                            );
+                          }
+                        ?>
                         <div class="col-lg-4 my-auto">
                           <p class="text-right my-auto">Procesador</p>
                         </div>
                         <div class="col-lg-8 d-flex">
                           <select name="procesador" class="form-control mr-3" style="width: 190px">
-                            <option value="">procesador</option>
+                            <?php
+                              foreach ($result as $key => $valor) {
+                                echo '<option value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
+                              }
+                            ?>
                           </select>
                           <input type="text" name="generacion" value="" style="width: 45px" class="form-control">
                         </div>
@@ -72,7 +89,7 @@
                           <p class="text-right my-auto">Memoria RAM</p>
                         </div>
                         <div class="col-lg-8">
-                          <input type="number" name="ram" value="<?php echo $ramgb; ?>" style="width: 250px" class="form-control">
+                          <input type="number" name="ram" value="" style="width: 250px" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -121,12 +138,13 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- SWAIIE -->
-    <script src="../js/SesionUsuario.js" charset="utf-8"></script>
-    <script src="../js/agregarcomponente.js" charset="utf-8"></script>
+    <script src="js/SesionUsuario.js" charset="utf-8"></script>
+    <script src="js/agregarcomponente.js" charset="utf-8"></script>
     <script type="text/javascript">
     $("#selectall").on("click", function() {
       $(".case").prop("checked", this.checked);
     });
     </script>
+    <?php var_dump($result); ?>
   </body>
 </html>

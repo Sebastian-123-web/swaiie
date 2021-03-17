@@ -73,7 +73,7 @@
                       <td>Windows 7 Pro</td>
                       <td><span class="badge badge-pill badge-success">Activo</span></td>
                       <td>rbanagasta</td>
-                      <td><a href="admin\mostrarequipo.php?id_equipo=ABCD123" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
+                      <td><a href="mostrarequipo.php?id_equipo=ABCD123" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
                     </tr>
                     <tr>
                       <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
