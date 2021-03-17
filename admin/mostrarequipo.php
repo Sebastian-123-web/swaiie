@@ -84,7 +84,25 @@
               <h1 class="h3 p-1 mb-3">Agregar componente</h1>
               <div class="card">
                 <div class="card-body">
-                  hola
+                  <form id="formAddCom" name="formAddCom" method="POST" enctype="multipart/form-data">
+                    <p class="mb-2">Seleccion el tipo de Componente</p>
+                    <select name="selectcomponente" class="form-control mb-3">
+                      <option selected>Tipo de Componente</option>
+                      <option value="marca_modelo">Marca y Modelo</option>
+                      <option value="os">Sistema Operativo</option>
+                      <option value="cpu">Procesador</option>
+                      <option value="tipo">Tipo de Equipo</option>
+                      <option value="antivirus">Antivirus</option>
+                      <option value="software">Software</option>
+                    </select>
+                    <p class="mb-2">Digite el componente</p>
+                    <div class="input-group mb-3">
+                      <input type="text" name="addcomponente" class="form-control" placeholder="Componente" aria-label="" aria-describedby="basic-addon1">
+                      <div class="input-group-append">
+                        <button class="btn btn-info btn-group-sm" type="button" id="btnCom"><i class="fas fa-plus"></i></button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -104,6 +122,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- SWAIIE -->
     <script src="../js/SesionUsuario.js" charset="utf-8"></script>
+    <script src="../js/agregarcomponente.js" charset="utf-8"></script>
     <script type="text/javascript">
     $("#selectall").on("click", function() {
       $(".case").prop("checked", this.checked);
