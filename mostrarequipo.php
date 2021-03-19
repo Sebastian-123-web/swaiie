@@ -37,7 +37,7 @@
                 <?php
                   $id_equipo = $_GET['id_equipo'];
                 ?>
-                <h1 class="h3"><?php echo $id_equipo; ?></h1>
+                <h1 class="h3" id="idequipo"><?php echo $id_equipo; ?></h1>
                 <div class="d-flex">
                   <div class="m-auto">
                     <div class="">
@@ -54,10 +54,10 @@
                       <hr>
                       <div class="d-flex mb-3">
                         <?php
+                          //  OBTENER TODOS LOS CPUs
                           include 'clases/conexion.php';
                           $sql = "SELECT * FROM `cpu`";
                           $query = mysqli_query($link, $sql);
-                          $array = mysqli_fetch_array($query);
                           $result[] = array();
                           while($row = mysqli_fetch_array($query)){
                             $result[] = array(
@@ -65,6 +65,7 @@
                               'cpu' => $row['cpu']
                             );
                           }
+                          //  OBTENER LOS DATOS DEL EQUIPO
                         ?>
                         <div class="col-lg-4 my-auto">
                           <p class="text-right my-auto">Procesador</p>
@@ -73,7 +74,13 @@
                           <select name="procesador" class="form-control mr-3" style="width: 190px">
                             <?php
                               foreach ($result as $key => $valor) {
-                                echo '<option value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
+                                if (isset($valor['id_cpu']) && isset($valor['cpu'])) {
+                                  if ($valor['cpu'] == $cpu) {
+                                    echo '<option selected value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
+                                  }else{
+                                    echo '<option value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
+                                  }
+                                }
                               }
                             ?>
                           </select>
@@ -139,12 +146,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- SWAIIE -->
     <script src="js/SesionUsuario.js" charset="utf-8"></script>
-    <script src="js/agregarcomponente.js" charset="utf-8"></script>
+    <script src="js/EquipoComputo.js" charset="utf-8"></script>
     <script type="text/javascript">
     $("#selectall").on("click", function() {
       $(".case").prop("checked", this.checked);
     });
     </script>
-    <?php var_dump($result); ?>
   </body>
 </html>
