@@ -34,14 +34,20 @@
           <div class="row">
             <div class="col-lg-9 pl-5 pr-0 py-3">
               <div class="d-flex justify-content-between py-2">
-                <?php
-                  $id_equipo = $_GET['id_equipo'];
-                ?>
-                <h1 class="h3" id="idequipo"><?php echo $id_equipo; ?></h1>
+                <div class="d-flex">
+                  <h1 class="h3 m-0" id="idequipo"></h1>
+                  <p class="my-auto ml-2" style="cursor: pointer;"><i class="fas fa-edit"></i></p>
+                  <div class="my-auto ml-3">
+                    <span class="badge badge-pill" id="estado">Activo</span>
+                  </div>
+                </div>
                 <div class="d-flex">
                   <div class="m-auto">
-                    <div class="">
-                      <span class="badge badge-pill badge-success">Activo</span>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" name="button" class="btn btn-info"><i class="fas fa-file-alt"></i></button>
+                      <button type="button" name="button" class="btn btn-dark"><i class="fas fa-tools"></i></button>
+                      <button type="button" name="button" class="btn btn-primary"><i class="fas fa-file-invoice"></i></button>
+                      <button type="button" name="button" class="btn btn-secondary"><i class="fas fa-trash"></i></button>
                     </div>
                   </div>
                 </div>
@@ -53,38 +59,33 @@
                       <h3>Componente Fisico</h3>
                       <hr>
                       <div class="d-flex mb-3">
-                        <?php
-                          //  OBTENER TODOS LOS CPUs
-                          include 'clases/conexion.php';
-                          $sql = "SELECT * FROM `cpu`";
-                          $query = mysqli_query($link, $sql);
-                          $result[] = array();
-                          while($row = mysqli_fetch_array($query)){
-                            $result[] = array(
-                              'id_cpu' => $row['id_cpu'],
-                              'cpu' => $row['cpu']
-                            );
-                          }
-                          //  OBTENER LOS DATOS DEL EQUIPO
-                        ?>
                         <div class="col-lg-4 my-auto">
                           <p class="text-right my-auto">Procesador</p>
                         </div>
                         <div class="col-lg-8 d-flex">
-                          <select name="procesador" class="form-control mr-3" style="width: 190px">
-                            <?php
-                              foreach ($result as $key => $valor) {
-                                if (isset($valor['id_cpu']) && isset($valor['cpu'])) {
-                                  if ($valor['cpu'] == $cpu) {
-                                    echo '<option selected value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
-                                  }else{
-                                    echo '<option value="'.$valor['id_cpu'].'">'.$valor['cpu'].'</option>';
-                                  }
-                                }
-                              }
-                            ?>
+                          <select name="procesador" class="form-control mr-3" style="width: 190px" id="cpu">
+
                           </select>
-                          <input type="text" name="generacion" value="" style="width: 45px" class="form-control">
+                          <input type="text" name="generacion" value="" style="width: 45px" class="form-control" id="generacion">
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Disco</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <input type="text" name="disco" value="" class="form-control mr-3" style="width: 170px" id="disco">
+                          <input type="text" name="generacion" value="" style="width: 66px" class="form-control" id="tipodisco">
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Marca/Modelo</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="procesador" class="form-control mr-3" style="width: 250px" id="mm">
+
+                          </select>
                         </div>
                       </div>
                     </div>

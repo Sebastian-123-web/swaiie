@@ -1,9 +1,6 @@
 <?php
   class ComponentesComputo{
 
-    function __construct(){
-    }
-
     public function AgregarComponente($componente, $valorcom){
       include 'conexion.php';
       switch ($componente) {
@@ -35,11 +32,10 @@
         default:
           break;
       }
-
     }
 
     public function MostrarComponente(){
-
+      
     }
   }
 
