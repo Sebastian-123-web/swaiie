@@ -56,6 +56,66 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-lg-6" style="border-right: 1px solid #dee2e6;">
+                      <h3>Componente Logico</h3>
+                      <hr>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Nombre Equipo</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <input type="text" name="nomequipo" value="" style="width: 250px" class="form-control" id="nomequipo">
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Sistema Operativo</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="os" class="form-control" style="width: 250px" id="os">
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Antivirus</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="antivirus" class="form-control" style="width: 250px" id="antivirus">
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Software</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="software" class="form-control" style="width: 250px" id="software">
+
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Mantenimiento</p>
+                        </div>
+                        <div class="col-lg-8">
+                          <textarea name="mantenimiento" rows="3" cols="" class="form-control" style="width: 250px;" id="mantenimiento"></textarea>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Usuario</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="usuario" class="form-control" style="width: 250px" id="usuario">
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
                       <h3>Componente Fisico</h3>
                       <hr>
                       <div class="d-flex mb-3">
@@ -75,7 +135,7 @@
                         </div>
                         <div class="col-lg-8 d-flex">
                           <input type="text" name="disco" value="" class="form-control mr-3" style="width: 170px" id="disco">
-                          <input type="text" name="generacion" value="" style="width: 66px" class="form-control" id="tipodisco">
+                          <input type="text" name="tipodisco" value="" style="width: 66px" class="form-control" id="tipodisco">
                         </div>
                       </div>
                       <div class="d-flex mb-3">
@@ -83,23 +143,30 @@
                           <p class="text-right my-auto">Marca/Modelo</p>
                         </div>
                         <div class="col-lg-8 d-flex">
-                          <select name="procesador" class="form-control mr-3" style="width: 250px" id="mm">
+                          <select name="mm" class="form-control" style="width: 250px" id="mm">
 
                           </select>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <h3>Componente Logico</h3>
-                      <hr>
                       <div class="d-flex mb-3">
                         <div class="col-lg-4 my-auto">
                           <p class="text-right my-auto">Memoria RAM</p>
                         </div>
                         <div class="col-lg-8">
-                          <input type="number" name="ram" value="" style="width: 250px" class="form-control">
+                          <input type="number" name="ram" value="" style="width: 250px" class="form-control" id="ram">
                         </div>
                       </div>
+                      <div class="d-flex mb-3">
+                        <div class="col-lg-4 my-auto">
+                          <p class="text-right my-auto">Tipo de Equipo</p>
+                        </div>
+                        <div class="col-lg-8 d-flex">
+                          <select name="tipo" class="form-control" style="width: 250px" id="tipo">
+
+                          </select>
+                        </div>
+                      </div>
+                      <button type="button" name="button" class="btn btn-info"><i class="fas fa-exchange-alt"></i> Cambiar</button>
                     </div>
                   </div>
                 </div>

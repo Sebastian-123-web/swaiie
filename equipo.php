@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-lg-9 pl-5 pr-0 py-3">
               <div class="d-flex justify-content-between py-2">
-                <h1 class="h3">Notificaciones</h1>
+                <h1 class="h3">Inventario</h1>
                 <div class="d-flex">
                   <div class="mr-2">
                     <div class="input-group">
@@ -46,6 +46,7 @@
                   </div>
                   <div class="btn-group pb-1" role="group" aria-label="Basic example">
                     <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
+                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-file-alt"></i></button>
                     <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-trash"></i></button>
                   </div>
                 </div>
