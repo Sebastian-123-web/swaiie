@@ -38,7 +38,7 @@
                 <div class="d-flex">
                   <div class="mr-2">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
+                      <input type="search" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
                       <div class="input-group-append">
                         <button class="btn btn-dark btn-group-sm" type="button"><i class="fas fa-search"></i></button>
                       </div>
