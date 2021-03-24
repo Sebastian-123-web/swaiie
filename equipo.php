@@ -37,17 +37,28 @@
                 <h1 class="h3">Inventario</h1>
                 <div class="d-flex">
                   <div class="mr-2">
-                    <div class="input-group">
-                      <input type="search" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
-                      <div class="input-group-append">
-                        <button class="btn btn-dark btn-group-sm" type="button"><i class="fas fa-search"></i></button>
+                    <form id="formSearch" name="formSearch" method="POST" enctype="multipart/form-data">
+                      <div class="input-group">
+                        <select name="SearchComponente" id="SearchComponente" class="form-control">
+                          <option selected value="id_equipo">N° serie</option>
+                          <option value="nom_equipo">Nombre Equipo</option>
+                          <option value="mm">Marca y Modelo</option>
+                          <option value="os">Sistema Operativo</option>
+                          <option value="cpu">Procesador</option>
+                          <option value="tipo">Tipo de Equipo</option>
+                          <option value="antivirus">Antivirus</option>
+                          <option value="software">Software</option>
+                          <option value="estado">Estado</option>
+                          <option value="id_user">Usuario</option>
+                        </select>
+                        <input type="search" id="SearchCom" name="SearchCom" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
+                        <div class="input-group-append btn-group pb-1" role="group" aria-label="Basic example">
+                          <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
+                          <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-file-excel"></i></button>
+                          <button type="button" class="btn bg-swaiie text-light" id="EliminarEquipo"><i class="fas fa-trash"></i></button>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="btn-group pb-1" role="group" aria-label="Basic example">
-                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
-                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-file-alt"></i></button>
-                    <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-trash"></i></button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -55,7 +66,7 @@
                 <table class="table" style="border: 1px solid #dee2e6">
                   <thead>
                     <tr>
-                      <th><input type="checkbox" name="" value="" class="ml-1" id="selectall"></th>
+                      <th><input type="checkbox" value="n" class="ml-1" id="selectall"></th>
                       <th>N° Serie</th>
                       <th>Nombre Equipo</th>
                       <th>Modelo</th>
@@ -65,9 +76,11 @@
                       <th> </th>
                     </tr>
                   </thead>
-                  <tbody id="todosequipos">
+                  <form id="formEquipo" name="formEquipo" method="POST" enctype="multipart/form-data">
+                    <tbody id="todosequipos">
 
-                  </tbody>
+                    </tbody>
+                  </form>
                 </table>
               </div>
             </div>

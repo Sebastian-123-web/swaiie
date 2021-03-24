@@ -11,8 +11,66 @@ $(document).ready(function(){
     InsertarComponentesoftware();
     InsertarComponentesusuario();
   }
+
+  // BUSCADOR - CREANDO EL JAVASCRIPT PARA BUSCAR COMPONENTE
+  $('#SearchCom').keyup(function(){
+    var search = $('#SearchCom').val();
+    var searchcomponente = $('#SearchComponente').val();
+    $.ajax({
+      url : 'metodos/SearchComponente.php',
+      type : 'POST',
+      data : { search , searchcomponente },
+      success : function(response){
+        let datosbucados = JSON.parse(response);
+        var insertar = '';
+        datosbucados.forEach(datosbucados => {
+          if (datosbucados.estado == 'Operativo') {
+            var estado = 'badge-success';
+          }else if (datosbucados.estado == 'Inoperativo') {
+            var estado = 'badge-danger';
+          }else if (datosbucados.estado == 'Mantenimineto') {
+            var estado = 'badge-info';
+          }else if (datosbucados.estado == 'En Proceso') {
+            var estado = 'badge-warning';
+          }
+          insertar +=`
+          <tr idequipo="${datosbucados.id_equipo}">
+            <th><input type="checkbox" value="${datosbucados.id_equipo}" class="ml-1 case deletecheckbox"></th>
+            <td>${datosbucados.id_equipo}</td>
+            <td>${datosbucados.nom_equipo}</td>
+            <td>${datosbucados.mm}</td>
+            <td>${datosbucados.os}</td>
+            <td><span class="badge badge-pill ${estado}" id="estado">${datosbucados.estado}</span></td>
+            <td>${datosbucados.id_user}</td>
+            <td><a href="#" class="btn btn-info btn-sm abrir-Equipo"><i class="fas fa-cogs"></i></a></td>
+          </tr>
+          `
+        });
+        $('#todosequipos').html(insertar);
+      }
+    })
+  })
 });
 
+//  ELIMINAR EQUIPOS O EQUIPO
+$('#EliminarEquipo').click(function(){
+  var elementos = new Array();
+  $("input:checkbox:checked").each(function(){
+    elementos.push($(this).val());
+  });
+  $.ajax({
+    url : 'metodos/EliminarEquipo.php',
+    type : 'POST',
+    data : { elementos },
+    success : function(response){
+      console.log(response);
+      MostrarEquipo();
+    }
+  });
+});
+
+
+//  AGREGAR COMPONENTES
 $('#btnCom').click(function(){
   var formDataCom = new FormData(document.getElementById('formAddCom'));
   $.ajax({
@@ -47,7 +105,7 @@ function MostrarEquipo(){
         }
         insertar +=`
         <tr idequipo="${equipos.id_equipo}">
-          <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
+          <th><input type="checkbox" name="eliminar[]" value="${equipos.id_equipo}" class="ml-1 case"></th>
           <td>${equipos.id_equipo}</td>
           <td>${equipos.nom_equipo}</td>
           <td>${equipos.mm}</td>
