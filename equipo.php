@@ -54,7 +54,7 @@
                         <input type="search" id="SearchCom" name="SearchCom" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
                         <div class="input-group-append btn-group pb-1" role="group" aria-label="Basic example">
                           <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
-                          <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-file-excel"></i></button>
+                          <button type="button" class="btn bg-swaiie text-light"><a href="archivos/ExportarExcel.php" class="text-light"><i class="fas fa-file-excel"></i></a></button>
                           <button type="button" class="btn bg-swaiie text-light" id="EliminarEquipo"><i class="fas fa-trash"></i></button>
                         </div>
                       </div>
