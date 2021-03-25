@@ -53,6 +53,7 @@ $nombreDelDocumento = "Mi primer archivo.xlsx";
 
 $hoja = $documento->getActiveSheet();
 $hoja->setTitle("Inventario");
+$hoja->getStyle('B2')->getFill()->getStartColor()->setARGB('dc3545');
 $hoja->setCellValue("A2", "USUARIO");
 $hoja->setCellValue("B2", "NOMBRE EQUIPO");
 $hoja->setCellValue("C2", "SERIE");
