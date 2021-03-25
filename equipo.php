@@ -64,7 +64,7 @@
               </div>
               <div class="overflow-auto" style="height: calc(100vh - 146px)">
                 <table class="table" style="border: 1px solid #dee2e6">
-                  <thead>
+                  <thead class="thead-light">
                     <tr>
                       <th><input type="checkbox" value="n" class="ml-1" id="selectall"></th>
                       <th>N° Serie</th>

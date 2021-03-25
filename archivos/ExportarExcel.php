@@ -81,6 +81,7 @@ foreach ($result as $key => $value) {
   $hoja->setCellValue("L$i", $value['mantenimiento']);
   $i++;
 }
+$hoja->setAutoFilter('A2:L6');
 /**
  * Los siguientes encabezados son necesarios para que
  * el navegador entienda que no le estamos mandando
