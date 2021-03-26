@@ -15,6 +15,7 @@ $(document).ready(function(){
           }
         }else if(response==1){
           if(window.location.pathname !== "/swaiie/index.php"){
+            console.log(window.location.pathname);
             window.location.href = "index.php";
           }
         }

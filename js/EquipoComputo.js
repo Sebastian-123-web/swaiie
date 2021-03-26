@@ -28,7 +28,7 @@ $(document).ready(function(){
             var estado = 'badge-success';
           }else if (datosbucados.estado == 'Inoperativo') {
             var estado = 'badge-danger';
-          }else if (datosbucados.estado == 'Mantenimineto') {
+          }else if (datosbucados.estado == 'Mantenimiento') {
             var estado = 'badge-info';
           }else if (datosbucados.estado == 'En Proceso') {
             var estado = 'badge-warning';
@@ -98,7 +98,7 @@ function MostrarEquipo(){
           var estado = 'badge-success';
         }else if (equipos.estado == 'Inoperativo') {
           var estado = 'badge-danger';
-        }else if (equipos.estado == 'Mantenimineto') {
+        }else if (equipos.estado == 'Mantenimiento') {
           var estado = 'badge-info';
         }else if (equipos.estado == 'En Proceso') {
           var estado = 'badge-warning';
@@ -144,16 +144,53 @@ function InsertarComponentescpu(){
           $('#idequipo').html(unequipo.id_equipo);
           if(unequipo.estado == 'Operativo'){
             $('#estado').html(unequipo.estado).addClass('badge-success');
+            estado +=`
+            <option selected value="Operativo">Operativo</option>
+            <option value="Inoperativo">Inoperativo</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            `
           }else if(unequipo.estado == 'Inoperativo'){
             $('#estado').html(unequipo.estado).addClass('badge-danger');
+            estado +=`
+            <option value="Operativo">Operativo</option>
+            <option selected value="Inoperativo">Inoperativo</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            `
           }else if(unequipo.estado == 'Mantenimiento'){
             $('#estado').html(unequipo.estado).addClass('badge-info');
+            estado +=`
+            <option value="Operativo">Operativo</option>
+            <option value="Inoperativo">Inoperativo</option>
+            <option value="En Proceso">En Proceso</option>
+            <option selected value="Mantenimiento">Mantenimiento</option>
+            `
           }else if(unequipo.estado == 'En Proceso'){
             $('#estado').html(unequipo.estado).addClass('badge-warning');
+            estado +=`
+            <option value="Operativo">Operativo</option>
+            <option value="Inoperativo">Inoperativo</option>
+            <option selected value="En Proceso">En Proceso</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            `
           }
+          $('#estadoselect').html(estado);
+
           $('#generacion').val(unequipo.generacion);
           $('#disco').val(unequipo.disco);
-          $('#tipodisco').val(unequipo.tipo_disco);
+          if (unequipo.tipo_disco == 'HDD') {
+            tipodisco +=`
+              <option selected value="${cpu.id_cpu}">HDD</option>
+              <option value="${cpu.id_cpu}">SSD</option>
+            `
+          }else {
+            tipodisco +=`
+              <option value="${cpu.id_cpu}">HDD</option>
+              <option selected value="${cpu.id_cpu}">SSD</option>
+            `
+          }
+          $('#tipodisco').html(tipodisco);
           $('#ram').val(unequipo.ram);
           $('#nomequipo').val(unequipo.nom_equipo);
           $('#mantenimiento').val(unequipo.mantenimiento);

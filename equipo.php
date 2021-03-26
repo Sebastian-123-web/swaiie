@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-lg-9 pl-5 pr-0 py-3">
               <div class="d-flex justify-content-between py-2">
-                <h1 class="h3">Inventario</h1>
+                <h1 class="h3"><i class="fas fa-desktop"></i> Inventario</h1>
                 <div class="d-flex">
                   <div class="mr-2">
                     <form id="formSearch" name="formSearch" method="POST" enctype="multipart/form-data">
@@ -53,7 +53,7 @@
                         </select>
                         <input type="search" id="SearchCom" name="SearchCom" class="form-control" placeholder="Busqueda" aria-label="" aria-describedby="basic-addon1">
                         <div class="input-group-append btn-group pb-1" role="group" aria-label="Basic example">
-                          <button type="button" class="btn bg-swaiie text-light"><i class="fas fa-plus"></i></button>
+                          <button type="button" class="btn bg-swaiie text-light" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-plus"></i></button>
                           <button type="button" class="btn bg-swaiie text-light"><a href="archivos/ExportarExcel.php" class="text-light"><i class="fas fa-file-excel"></i></a></button>
                           <button type="button" class="btn bg-swaiie text-light" id="EliminarEquipo"><i class="fas fa-trash"></i></button>
                         </div>
@@ -114,6 +114,136 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenteredLabel"><i class="fas fa-plus"></i> Agregar Equipo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <form class="row" action="index.html" method="post">
+              <div class="col-lg-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                  </div>
+                  <input type="text" name="n_serie" value="" placeholder="Numero de Serie" class="form-control" id="idequipo">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-desktop"></i></span>
+                  </div>
+                  <input type="text" name="n_equipo" value="" placeholder="Nombre de Equipo" class="form-control" id="nomequipo">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-memory"></i></span>
+                  </div>
+                  <input type="text" name="ram" value="" placeholder="Memoria RAM" class="form-control" id="ram">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-hdd"></i></span>
+                  </div>
+                  <input type="text" name="disco" value="" placeholder="Disco" class="form-control" id="disco">
+                  <select name="t_disco" class="form-control" id="tipodisco">
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-registered"></i></span>
+                  </div>
+                  <select name="mm" class="form-control" id="mm">
+                    <option value="Marca y Modelo">Marca y Modelo</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fab fa-windows"></i></span>
+                  </div>
+                  <select name="os" class="form-control" id="os">
+                    <option value="Sistema Operativo">Sistema Operativo</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-microchip"></i></span>
+                  </div>
+                  <select name="cpu" class="form-control" id="cpu">
+                    <option value="Procesador">Procesador</option>
+                  </select>
+                  <input type="number" name="generacion" value="" placeholder="generacion" class="form-control" id="generacion">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-laptop"></i></span>
+                  </div>
+                  <select name="tipo" class="form-control" id="tipo">
+                    <option value="tipo">Tipo</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                  <select name="antivirus" class="form-control" id="antivirus">
+                    <option value="antivirus">antivirus</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fab fa-uncharted"></i></span>
+                  </div>
+                  <select name="software" class="form-control" id="software">
+                    <option value="software">software</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-file-medical-alt"></i></span>
+                  </div>
+                  <select name="estado" class="form-control" id="estados">
+                    <option value="Operativo">Operativo</option>
+                    <option value="Inoperativo">Inoperativo</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-tools"></i></span>
+                  </div>
+                  <textarea name="mantenimiento" rows="3" cols="" class="form-control" placeholder="Describa problema del Equipo" id="mantenimiento"></textarea>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <select name="usuario" class="form-control" id="usuario">
+                    <option value="usuario">usuario</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
+        <button type="button" class="btn btn-primary" id="agregarequipo"><i class="fas fa-save"></i> Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- FONTAWESOME -->

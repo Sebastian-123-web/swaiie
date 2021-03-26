@@ -35,6 +35,7 @@
             <div class="col-lg-9 pl-5 pr-0 py-3">
               <div class="d-flex justify-content-between py-2">
                 <div class="d-flex">
+                  <h3 class="mr-2"><i class="fas fa-barcode"></i></h3>
                   <h1 class="h3 m-0" id="idequipo"></h1>
                   <p class="my-auto ml-2" style="cursor: pointer;"><i class="fas fa-edit"></i></p>
                   <div class="my-auto ml-3">
@@ -59,116 +60,104 @@
                       <div class="col-lg-6" style="border-right: 1px solid #dee2e6;">
                         <h3>Componente Logico</h3>
                         <hr>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Nombre Equipo</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-desktop"></i></span>
                           </div>
-                          <div class="col-lg-8">
-                            <input type="text" name="nomequipo" value="" style="width: 250px" class="form-control" id="nomequipo">
-                          </div>
+                          <input type="text" name="n_equipo" value="" placeholder="Nombre de Equipo" class="form-control" id="nomequipo">
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Sistema Operativo</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-windows"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="os" class="form-control" style="width: 250px" id="os">
-
-                            </select>
-                          </div>
+                          <select name="os" class="form-control" id="os">
+                            <option value="Sistema Operativo">Sistema Operativo</option>
+                          </select>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Antivirus</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-shield-virus"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="antivirus" class="form-control" style="width: 250px" id="antivirus">
-
-                            </select>
-                          </div>
+                          <select name="antivirus" class="form-control" id="antivirus">
+                            <option value="antivirus">antivirus</option>
+                          </select>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Software</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fab fa-uncharted"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="software" class="form-control" style="width: 250px" id="software">
-
-                            </select>
-                          </div>
+                          <select name="software" class="form-control" id="software">
+                            <option value="software">software</option>
+                          </select>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Mantenimiento</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-tools"></i></span>
                           </div>
-                          <div class="col-lg-8">
-                            <textarea name="mantenimiento" rows="3" cols="" class="form-control" style="width: 250px;" id="mantenimiento"></textarea>
-                          </div>
+                          <textarea name="mantenimiento" rows="3" cols="" class="form-control" placeholder="Describa problema del Equipo" id="mantenimiento"></textarea>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Usuario</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="usuario" class="form-control" style="width: 250px" id="usuario">
-
-                            </select>
-                          </div>
+                          <select name="usuario" class="form-control" id="usuario">
+                            <option value="usuario">usuario</option>
+                          </select>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <h3>Componente Fisico</h3>
                         <hr>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Procesador</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-microchip"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="procesador" class="form-control mr-3" style="width: 190px" id="cpu">
-
-                            </select>
-                            <input type="text" name="generacion" value="" style="width: 45px" class="form-control" id="generacion">
-                          </div>
+                          <select name="cpu" class="form-control" id="cpu">
+                            <option value="Procesador">Procesador</option>
+                          </select>
+                          <input type="number" name="generacion" value="" placeholder="generacion" class="form-control" id="generacion">
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Disco</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-hdd"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <input type="text" name="disco" value="" class="form-control mr-3" style="width: 170px" id="disco">
-                            <input type="text" name="tipodisco" value="" style="width: 66px" class="form-control" id="tipodisco">
-                          </div>
+                          <input type="text" name="disco" value="" placeholder="Capacidad de Disco" class="form-control" id="disco">
+                          <select name="t_disco" class="form-control" id="tipodisco">
+                            <option value="HDD">HDD</option>
+                            <option value="SSD">SSD</option>
+                          </select>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Marca/Modelo</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-registered"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="mm" class="form-control" style="width: 250px" id="mm">
-
-                            </select>
-                          </div>
+                          <select name="mm" class="form-control" id="mm">
+                            <option value="Marca y Modelo">Marca y Modelo</option>
+                          </select>
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Memoria RAM</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-memory"></i></span>
                           </div>
-                          <div class="col-lg-8">
-                            <input type="number" name="ram" value="" style="width: 250px" class="form-control" id="ram">
-                          </div>
+                          <input type="text" name="ram" value="" placeholder="Memoria RAM" class="form-control" id="ram">
                         </div>
-                        <div class="d-flex mb-3">
-                          <div class="col-lg-4 my-auto">
-                            <p class="text-right my-auto">Tipo de Equipo</p>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-laptop"></i></span>
                           </div>
-                          <div class="col-lg-8 d-flex">
-                            <select name="tipo" class="form-control" style="width: 250px" id="tipo">
-
-                            </select>
+                          <select name="tipo" class="form-control" id="tipo">
+                            <option value="tipo">Tipo</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-file-medical-alt"></i></span>
                           </div>
+                          <select name="estado" class="form-control" id="estadoselect">
+                          </select>
                         </div>
                         <div class="d-flex justify-content-end">
-                          <button type="button" name="button" class="btn btn-info mr-5 mt-5 mb-3" id="cambiarequipo"><i class="fas fa-exchange-alt"></i> Cambiar</button>
+                          <button type="button" name="button" class="btn btn-info" id="cambiarequipo"><i class="fas fa-exchange-alt"></i> Cambiar</button>
                         </div>
                       </div>
                     </div>

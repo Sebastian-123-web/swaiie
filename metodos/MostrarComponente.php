@@ -105,14 +105,12 @@
 
     case 'usuario':
       include '../clases/conexion.php';
-      $sql = "SELECT * FROM `usuario` ORDER BY `usuario`.`id_user` ASC";
+      $sql = "SELECT `id_user` FROM `usuario` ORDER BY `usuario`.`id_user` ASC";
       $query = mysqli_query($link, $sql);
       $result = array();
       while($row = mysqli_fetch_array($query)){
         $result[] = array(
-          'id_user' => $row['id_user'],
-          'nombre' => $row['nombre'],
-          'apellido' => $row['apellido']
+          'id_user' => $row['id_user']
         );
       }
       $sendusuario = json_encode($result);
