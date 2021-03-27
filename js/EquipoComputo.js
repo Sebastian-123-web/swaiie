@@ -532,8 +532,3 @@ $('#agregarequipo').click(function(){
     }
   });
 });
-
-$('#alterta').click(function(){
-  var elemento = document.getElementById('modal1');
-  elemento.href = 'flex';
-});
