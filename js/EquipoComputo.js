@@ -423,7 +423,6 @@ function MostrarComponentesEnAgregar(){
       data : { com },
       success : function(response){
         let componente = JSON.parse(response);
-        console.log(componente);
         var insertaros = '';
         var insertarmm = '';
         var insertarcpu = '';
@@ -521,13 +520,14 @@ $('#agregarequipo').click(function(){
     processData : false,
     contentType : false,
     success : function(response){
-      console.log(response);
       if (response == 'hecho') {
         alert('¡Bien hecho! Se agrego Correctamente');
         document.getElementById('formAddEq').reset();
         MostrarEquipo();
-      }else {
+      }else if(response == 'error'){
         alert('¡Oh cielos! Faltan Datos');
+      }else if (response == 'existe') {
+        alert('Numero de Serie ya Existe');
       }
     }
   });

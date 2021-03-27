@@ -15,10 +15,22 @@
   $estado = $_POST['estado'];
   $mantenimiento = $_POST['mantenimiento'];
   $usuario = $_POST['usuario'];
+
+  // PREGUNTA SI EL NUMERO DE SERIE Y EL NOMBRE DE EQUIPO ESTAN VACIOS
   if ($n_serie != '' && $n_equipo != '') {
-    $eq = new EquipoComputo();
-    $eq->AgregarEquipo($n_serie, $n_equipo, $ram, $disco, $t_disco, $mm, $os, $cpu, $generacion, $tipo, $antivirus, $software, $estado , $mantenimiento, $usuario);
-    echo 'hecho';
+    include '../clases/conexion.php';
+    $sql = "SELECT `id_equipo` FROM `equipo` WHERE `id_equipo`='$n_serie'";
+    $query = mysqli_query($link, $sql);
+    $arreglo = mysqli_fetch_array($query);
+    // IF PARA SABER SI EL NUMERO DE SERIE EXISTE EN LA BASE DE DATOS
+    if (!isset($arreglo[0])) {
+      $eq = new EquipoComputo();
+      $eq->AgregarEquipo($n_serie, $n_equipo, $ram, $disco, $t_disco, $mm, $os, $cpu, $generacion, $tipo, $antivirus, $software, $estado , $mantenimiento, $usuario);
+      echo 'hecho';
+    }else {
+      echo 'existe';
+    }
+
   }else {
     echo 'error';
   }
