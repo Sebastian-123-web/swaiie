@@ -26,3 +26,26 @@
   visibility: visible;
   opacity: 1;
 }
+
+/* ALERTA PARA AGREGAR EQUIPO */
+.modal1{
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  z-index: 9999999;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal1 .hecho{
+  position: fixed;
+  right: 20px;
+  top: -100vh;
+  transition: top 0.35s ease;
+  z-index: 9999999;
+}
+
+.modal1:target .hecho{
+  top: 50px;
+  transition: top 0.35s ease;
+}

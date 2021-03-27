@@ -128,32 +128,35 @@
       <div class="modal-body">
         <div class="card">
           <div class="card-body">
-            <form class="row" action="index.html" method="post">
+            <form class="row" id="formAddEq" name="formAddEq" method="POST" enctype="multipart/form-data">
               <div class="col-lg-6">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                   </div>
-                  <input type="text" name="n_serie" value="" placeholder="Numero de Serie" class="form-control" id="idequipo">
+                  <input type="text" name="n_serie" value="" placeholder="Numero de Serie" class="form-control" id="idequipo" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-desktop"></i></span>
                   </div>
-                  <input type="text" name="n_equipo" value="" placeholder="Nombre de Equipo" class="form-control" id="nomequipo">
+                  <input type="text" name="n_equipo" value="" placeholder="Nombre de Equipo" class="form-control" id="nomequipo" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-memory"></i></span>
                   </div>
-                  <input type="text" name="ram" value="" placeholder="Memoria RAM" class="form-control" id="ram">
+                  <input type="text" name="ram" value="" placeholder="Memoria RAM" class="form-control" id="ram" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-hdd"></i></span>
                   </div>
-                  <input type="text" name="disco" value="" placeholder="Disco" class="form-control" id="disco">
+                  <input type="text" name="disco" value="" placeholder="Disco" class="form-control" id="disco" required>
                   <select name="t_disco" class="form-control" id="tipodisco">
+                    <option value="Sin Disco">Sin Disco</option>
+                    <option value="HDD">HDD</option>
+                    <option value="SSD">SSD</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -161,7 +164,6 @@
                     <span class="input-group-text"><i class="fas fa-registered"></i></span>
                   </div>
                   <select name="mm" class="form-control" id="mm">
-                    <option value="Marca y Modelo">Marca y Modelo</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -169,7 +171,6 @@
                     <span class="input-group-text"><i class="fab fa-windows"></i></span>
                   </div>
                   <select name="os" class="form-control" id="os">
-                    <option value="Sistema Operativo">Sistema Operativo</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -177,9 +178,8 @@
                     <span class="input-group-text"><i class="fas fa-microchip"></i></span>
                   </div>
                   <select name="cpu" class="form-control" id="cpu">
-                    <option value="Procesador">Procesador</option>
                   </select>
-                  <input type="number" name="generacion" value="" placeholder="generacion" class="form-control" id="generacion">
+                  <input type="number" name="generacion" value="" placeholder="generacion" class="form-control" id="generacion" required>
                 </div>
               </div>
               <div class="col-lg-6">
@@ -188,7 +188,6 @@
                     <span class="input-group-text"><i class="fas fa-laptop"></i></span>
                   </div>
                   <select name="tipo" class="form-control" id="tipo">
-                    <option value="tipo">Tipo</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -196,7 +195,6 @@
                     <span class="input-group-text"><i class="fas fa-shield-virus"></i></span>
                   </div>
                   <select name="antivirus" class="form-control" id="antivirus">
-                    <option value="antivirus">antivirus</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -204,7 +202,6 @@
                     <span class="input-group-text"><i class="fab fa-uncharted"></i></span>
                   </div>
                   <select name="software" class="form-control" id="software">
-                    <option value="software">software</option>
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -222,14 +219,13 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-tools"></i></span>
                   </div>
-                  <textarea name="mantenimiento" rows="3" cols="" class="form-control" placeholder="Describa problema del Equipo" id="mantenimiento"></textarea>
+                  <textarea name="mantenimiento" rows="3" cols="" class="form-control" placeholder="Describa problema del Equipo" id="mantenimiento" required></textarea>
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                   </div>
                   <select name="usuario" class="form-control" id="usuario">
-                    <option value="usuario">usuario</option>
                   </select>
                 </div>
               </div>

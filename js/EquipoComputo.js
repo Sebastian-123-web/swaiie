@@ -1,6 +1,7 @@
 $(document).ready(function(){
   if (window.location.pathname == '/swaiie/equipo.php') {
     MostrarEquipo();
+    MostrarComponentesEnAgregar();
   }
   if(window.location.pathname == '/swaiie/mostrarequipo.php') {
     InsertarComponentescpu();
@@ -412,3 +413,127 @@ function InsertarComponentesusuario(){
     }
   });
 }
+
+function MostrarComponentesEnAgregar(){
+  let componentes = ["os","mm","cpu","tipo","antivirus","software","usuario"];
+  componentes.forEach(com => {
+    $.ajax({
+      url : 'metodos/MostrarComponente.php',
+      type : 'POST',
+      data : { com },
+      success : function(response){
+        let componente = JSON.parse(response);
+        console.log(componente);
+        var insertaros = '';
+        var insertarmm = '';
+        var insertarcpu = '';
+        var insertartipo = '';
+        var insertarantivirus = '';
+        var insertarsoftware = '';
+        var insertarid_user = '';
+        componente.forEach(item => {
+          if (item.os !== undefined) {
+            if (item.os == 'Ninguno') {
+              insertaros +=`
+                <option selected value="${item.id_os}">${item.os}</option>
+              `}else {
+                insertaros +=`
+                  <option value="${item.id_os}">${item.os}</option>
+                `}
+          }else if(item.mm !== undefined){
+            if (item.mm === 'Ninguno') {
+              insertarmm +=`
+                <option selected value="${item.id_mm}">${item.mm}</option>
+              `}else{
+                insertarmm +=`
+                  <option value="${item.id_mm}">${item.mm}</option>
+                `}
+          }else if (item.cpu !== undefined) {
+            if (item.cpu == 'Ninguno') {
+              insertarcpu +=`
+                <option selected value="${item.id_cpu}">${item.cpu}</option>
+              `}else {
+                insertarcpu +=`
+                  <option value="${item.id_cpu}">${item.cpu}</option>
+                `}
+          }else if (item.tipo !== undefined) {
+            if (item.tipo == 'Ninguno') {
+              insertartipo +=`
+                <option selected value="${item.id_tipo}">${item.tipo}</option>
+              `}else {
+                insertartipo +=`
+                  <option value="${item.id_tipo}">${item.tipo}</option>
+                `}
+          }else if (item.antivirus !== undefined) {
+            if (item.antivirus == 'Ninguno') {
+              insertarantivirus +=`
+                <option selected value="${item.id_antivirus}">${item.antivirus}</option>
+              `}else {
+                insertarantivirus +=`
+                  <option value="${item.id_antivirus}">${item.antivirus}</option>
+                `}
+          }else if (item.software !== undefined) {
+            if (item.software == 'Ninguno') {
+              insertarsoftware +=`
+                <option selected value="${item.id_software}">${item.software}</option>
+              `}else {
+                insertarsoftware +=`
+                  <option value="${item.id_software}">${item.software}</option>
+                `}
+          }else if (item.id_user !== undefined) {
+            if (item.id_user == 'Ninguno') {
+              insertarid_user +=`
+                <option selected value="${item.id_user}">${item.id_user}</option>
+              `
+            }else {
+              insertarid_user +=`
+                <option value="${item.id_user}">${item.id_user}</option>
+              `}
+          }
+        });
+        if (insertaros !== '') {
+          $('#os').html(insertaros);
+        }else if (insertarmm !== '') {
+          $('#mm').html(insertarmm);
+        }else if (insertarcpu !== '') {
+          $('#cpu').html(insertarcpu);
+        }else if (insertartipo !== '') {
+          $('#tipo').html(insertartipo);
+        }else if (insertarantivirus !== '') {
+          $('#antivirus').html(insertarantivirus);
+        }else if (insertarsoftware !== '') {
+          $('#software').html(insertarsoftware);
+        }else if (insertarid_user !== '') {
+          $('#usuario').html(insertarid_user);
+        }
+      }
+    })
+  });
+}
+
+
+$('#agregarequipo').click(function(){
+  var formDataAddEq = new FormData(document.getElementById('formAddEq'));
+  $.ajax({
+    url : 'metodos/AgregarEquipo.php',
+    type : 'POST',
+    data : formDataAddEq,
+    processData : false,
+    contentType : false,
+    success : function(response){
+      console.log(response);
+      if (response == 'hecho') {
+        alert('¡Bien hecho! Se agrego Correctamente');
+        document.getElementById('formAddEq').reset();
+        MostrarEquipo();
+      }else {
+        alert('¡Oh cielos! Faltan Datos');
+      }
+    }
+  });
+});
+
+$('#alterta').click(function(){
+  var elemento = document.getElementById('modal1');
+  elemento.href = 'flex';
+});
