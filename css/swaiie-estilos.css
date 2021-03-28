@@ -49,3 +49,17 @@
   top: 50px;
   transition: top 0.35s ease;
 }
+
+/* PANTALLA DE CARGA EN EQUIPO.php */
+.pantalla{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #18191a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}

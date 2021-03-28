@@ -240,6 +240,12 @@
     </div>
   </div>
 </div>
+<div class="pantalla">
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- FONTAWESOME -->
@@ -256,6 +262,11 @@
     <script type="text/javascript">
     $("#selectall").on("click", function() {
       $(".case").prop("checked", this.checked);
+    });
+    </script>
+    <script>
+    $(window).on("load",function(){
+      $(".pantalla").fadeOut("slow");
     });
     </script>
   </body>

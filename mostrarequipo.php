@@ -37,7 +37,7 @@
                 <div class="d-flex">
                   <h3 class="mr-2"><i class="fas fa-barcode"></i></h3>
                   <h1 class="h3 m-0" id="idequipo"></h1>
-                  <p class="my-auto ml-2" style="cursor: pointer;"><i class="fas fa-edit"></i></p>
+                  <p class="my-auto ml-2" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal3"><i class="fas fa-edit"></i></p>
                   <div class="my-auto ml-3">
                     <span class="badge badge-pill" id="estado">Activo</span>
                   </div>
@@ -48,14 +48,15 @@
                       <button type="button" name="button" class="btn btn-info"><i class="fas fa-file-alt"></i></button>
                       <button type="button" name="button" class="btn btn-dark"><i class="fas fa-tools"></i></button>
                       <button type="button" name="button" class="btn btn-primary"><i class="fas fa-file-invoice"></i></button>
-                      <button type="button" name="button" class="btn btn-secondary"><i class="fas fa-trash"></i></button>
+                      <button type="button" name="button" class="btn btn-secondary" id="EliminarUnEquipo"><i class="fas fa-trash"></i></button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-body">
-                  <form id="formCamEq" name="formCamEq" method="POST" enctype="multipart/form-data">
+                  <form id="formEditEq" name="formEditEq" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="id_equipo" value="" class="d-none" id="id_equipo">
                     <div class="row">
                       <div class="col-lg-6" style="border-right: 1px solid #dee2e6;">
                         <h3>Componente Logico</h3>
@@ -123,6 +124,7 @@
                           </div>
                           <input type="text" name="disco" value="" placeholder="Capacidad de Disco" class="form-control" id="disco">
                           <select name="t_disco" class="form-control" id="tipodisco">
+                            <option value="Sin Disco">Sin Disco</option>
                             <option value="HDD">HDD</option>
                             <option value="SSD">SSD</option>
                           </select>
@@ -154,6 +156,10 @@
                             <span class="input-group-text"><i class="fas fa-file-medical-alt"></i></span>
                           </div>
                           <select name="estado" class="form-control" id="estadoselect">
+                            <option id="op1" value="Operativo">Operativo</option>
+                            <option id="op2" value="Inoperativo">Inoperativo</option>
+                            <option id="op3" value="En Proceso">En Proceso</option>
+                            <option id="op4" value="Mantenimiento">Mantenimiento</option>
                           </select>
                         </div>
                         <div class="d-flex justify-content-end">
@@ -191,6 +197,27 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- MODAL PARA EDITAR EL NUMERO DE SERIE -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModal3Label">Esta Seguro que quiere cambiar el N° Serie?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="id_equipo_edit" value="" class="form-control" id="id_equipo_nuevo" placeholder="Nuevo N° Serie">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="guardar_nuevo_id"><i class="fas fa-save"></i> Guardar</button>
           </div>
         </div>
       </div>

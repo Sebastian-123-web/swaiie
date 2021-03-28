@@ -1,22 +1,17 @@
 <?php
   require_once('../mpdf/vendor/autoload.php');
-  include_once('../php/conexion.php');
-  $ticket=$_GET['nticket'];
-  $modelo=$_GET['modelo'];
-  $serie=$_GET['serie'];
-  $tipo=$_GET['tipo'];
-  $os=$_GET['os'];
-  $ram=$_GET['ram'];
-  $cpu=$_GET['cpu'];
-  $responsable=$_GET['responsable'];
+  $ticket=10;
+  $modelo='modelo';
+  $serie='serie';
+  $tipo='tipo';
+  $os='os';
+  $ram='ram';
+  $cpu='cpu';
+  $responsable='Responsable';
   $responsable = ucwords($responsable);//PONE LA PRIMERA LETRA EN MAYUSCULA DE CADA PALABRA EN UN STRING (PHP)
-  $consulta = "SELECT * FROM `soli-tk` WHERE `num-tk`=".$ticket;
-  $resultado = mysqli_query($link, $consulta);
-  $array = mysqli_fetch_array($resultado);
   $dia = date("j");
   $mes = date("n");
   $año = date("Y");
-  if($mes==1){$mes = 'Enero';}elseif($mes==2){$mes = 'Febrero';}elseif($mes==3){$mes = 'Marzo';}elseif($mes==4){$mes = 'Abril';}elseif($mes==5){$mes = 'Mayo';}elseif($mes==6){$mes = 'Junio';}elseif($mes==7){$mes = 'Julio';}elseif($mes==8){$mes = 'Agosto';}elseif($mes==9){$mes = 'Septiembre';}elseif($mes==10){$mes = 'Octubre';}elseif($mes==11){$mes = 'Noviembre';}else{$mes = 'Diciembre';}
 
   $mpdf = new \Mpdf\Mpdf();
 
@@ -43,7 +38,7 @@
   </table>
 
   <br>
-  <h4 align="center" style="font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:17px;font-weight:normal;"><b>Nombre de Usuario:<u> '.$array[1].' '.$array[2].' </u> IP:<u>	DHCP </u></b></h4>
+  <h4 align="center" style="font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:17px;font-weight:normal;"><b>Nombre de Usuario:<u>ARREGLO 1 Y 2</u> IP:<u>	DHCP </u></b></h4>
   <br>
   <h4 style="margin: 0 0 0 50px;font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:14px;font-weight:normal;"><b>Información de la Maquina:</b></h4>
       <table class="tg" style="undefined;table-layout: fixed; width: 586px; margin: auto;">
@@ -111,7 +106,7 @@
                   <col style="width: 585px">
                   </colgroup>
                     <tr>
-                      <th class="tg-cly1" style="height: 180px;">'.$array[15].'</th>
+                      <th class="tg-cly1" style="height: 180px;">Un arreglo 15</th>
                     </tr>
                   </table>
 

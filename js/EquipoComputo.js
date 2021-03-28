@@ -143,37 +143,39 @@ function InsertarComponentescpu(){
         success : function(responce){
           let unequipo = JSON.parse(responce);
           $('#idequipo').html(unequipo.id_equipo);
+          $('#id_equipo').val(unequipo.id_equipo);
+          $('#id_equipo_nuevo').val(unequipo.id_equipo);
           if(unequipo.estado == 'Operativo'){
             $('#estado').html(unequipo.estado).addClass('badge-success');
             estado +=`
-            <option selected value="Operativo">Operativo</option>
-            <option value="Inoperativo">Inoperativo</option>
-            <option value="En Proceso">En Proceso</option>
-            <option value="Mantenimiento">Mantenimiento</option>
+            <option id="op1" selected value="Operativo">Operativo</option>
+            <option id="op2" value="Inoperativo">Inoperativo</option>
+            <option id="op3" value="En Proceso">En Proceso</option>
+            <option id="op4" value="Mantenimiento">Mantenimiento</option>
             `
           }else if(unequipo.estado == 'Inoperativo'){
             $('#estado').html(unequipo.estado).addClass('badge-danger');
             estado +=`
-            <option value="Operativo">Operativo</option>
-            <option selected value="Inoperativo">Inoperativo</option>
-            <option value="En Proceso">En Proceso</option>
-            <option value="Mantenimiento">Mantenimiento</option>
+            <option id="op1" value="Operativo">Operativo</option>
+            <option id="op2" selected value="Inoperativo">Inoperativo</option>
+            <option id="op3" value="En Proceso">En Proceso</option>
+            <option id="op4" value="Mantenimiento">Mantenimiento</option>
             `
           }else if(unequipo.estado == 'Mantenimiento'){
             $('#estado').html(unequipo.estado).addClass('badge-info');
             estado +=`
-            <option value="Operativo">Operativo</option>
-            <option value="Inoperativo">Inoperativo</option>
-            <option value="En Proceso">En Proceso</option>
-            <option selected value="Mantenimiento">Mantenimiento</option>
+            <option id="op1" value="Operativo">Operativo</option>
+            <option id="op2" value="Inoperativo">Inoperativo</option>
+            <option id="op3" value="En Proceso">En Proceso</option>
+            <option id="op4" selected value="Mantenimiento">Mantenimiento</option>
             `
           }else if(unequipo.estado == 'En Proceso'){
             $('#estado').html(unequipo.estado).addClass('badge-warning');
             estado +=`
-            <option value="Operativo">Operativo</option>
-            <option value="Inoperativo">Inoperativo</option>
-            <option selected value="En Proceso">En Proceso</option>
-            <option value="Mantenimiento">Mantenimiento</option>
+            <option id="op1" value="Operativo">Operativo</option>
+            <option id="op2" value="Inoperativo">Inoperativo</option>
+            <option id="op3" selected value="En Proceso">En Proceso</option>
+            <option id="op4" value="Mantenimiento">Mantenimiento</option>
             `
           }
           $('#estadoselect').html(estado);
@@ -182,13 +184,21 @@ function InsertarComponentescpu(){
           $('#disco').val(unequipo.disco);
           if (unequipo.tipo_disco == 'HDD') {
             tipodisco +=`
-              <option selected value="${cpu.id_cpu}">HDD</option>
-              <option value="${cpu.id_cpu}">SSD</option>
+              <option selected value="${unequipo.tipo_disco}">HDD</option>
+              <option value="SSD">SSD</option>
+              <option value="Sin Disco">Sin Disco</option>
             `
-          }else {
+          }else if(unequipo.tipo_disco == 'SSD'){
             tipodisco +=`
-              <option value="${cpu.id_cpu}">HDD</option>
-              <option selected value="${cpu.id_cpu}">SSD</option>
+              <option value="HDD">HDD</option>
+              <option selected value="${unequipo.tipo_disco}">SSD</option>
+              <option value="Sin Disco">Sin Disco</option>
+            `
+          }else if(unequipo.tipo_disco == 'Sin Disco'){
+            tipodisco +=`
+              <option value="HDD">HDD</option>
+              <option value="SSD">SSD</option>
+              <option selected value="${unequipo.tipo_disco}">Sin Disco</option>
             `
           }
           $('#tipodisco').html(tipodisco);
@@ -386,7 +396,6 @@ function InsertarComponentesusuario(){
     data : { com : 'usuario' },
     success : function(responsee){
       let usuario = JSON.parse(responsee);
-      console.log(usuario);
       var id_equipo = localStorage.getItem('id_equipo');
       $.ajax({
         url : 'metodos/MostrarUnEquipo.php',
@@ -394,7 +403,6 @@ function InsertarComponentesusuario(){
         data : { id_equipo },
         success : function(usuarioe){
           let unequipo = JSON.parse(usuarioe);
-          console.log(unequipo);
           var insertar = '';
           usuario.forEach(usuario => {
             if (usuario.id_user == unequipo.id_user) {
@@ -528,6 +536,59 @@ $('#agregarequipo').click(function(){
         alert('¡Oh cielos! Faltan Datos');
       }else if (response == 'existe') {
         alert('Numero de Serie ya Existe');
+      }
+    }
+  });
+});
+
+
+//ELIMINAR SOLO UN EQUIPO
+$('#EliminarUnEquipo').click(function(){
+  var id_equipo = localStorage.getItem('id_equipo');
+  $.ajax({
+    url : 'metodos/EliminarUnEquipo.php',
+    type : 'POST',
+    data : { id_equipo },
+    success : function(response){
+      alert(response);
+      window.location.href = "equipo.php";
+    }
+  });
+});
+
+
+//  EDITAR UN EQUIPO
+$('#cambiarequipo').click(function(){
+  var formEditEq = new FormData(document.getElementById('formEditEq'));
+  $.ajax({
+    url : 'metodos/EditarEquipo.php',
+    type : 'POST',
+    data : formEditEq,
+    processData : false,
+    contentType : false,
+    success : function(response){
+      alert('Cambio realizado');
+      window.location.href = "mostrarequipo.php";
+    }
+  });
+});
+
+//  EDITAR NUMERO DE SERIE
+$('#guardar_nuevo_id').click(function(){
+  var id_equipo = localStorage.getItem('id_equipo');
+  var nuevo_id = document.getElementById('id_equipo_nuevo').value;
+  $.ajax({
+    url : 'metodos/EditarIdEquipo.php',
+    type : 'POST',
+    data : { id_equipo, nuevo_id },
+    success : function(response){
+      console.log(response);
+      if (response == 'Se Edito Correctamente!') {
+        alert(response);
+        localStorage.setItem('id_equipo', nuevo_id);
+        window.location.href = "mostrarequipo.php";
+      }else if (response == 'Error al Editarlo!') {
+        alert(response);
       }
     }
   });

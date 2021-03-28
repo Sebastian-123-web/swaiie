@@ -8,7 +8,6 @@ $(document).ready(function(){
       url : 'metodos/SesionEstado.php',
       type : 'GET',
       success : function(response){
-        console.log(response);
         if(response==2){
           if(window.location.pathname !== "/swaiie/admin.php" && window.location.pathname !== "/swaiie/equipo.php" && window.location.pathname !== "/swaiie/mostrarequipo.php"){
             window.location.href = "admin.php";

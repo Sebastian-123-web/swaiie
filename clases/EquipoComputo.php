@@ -72,11 +72,11 @@
 
 
     //  EDITAR EQUIPO DE LA BASE DE DATOS
-    public function EditarEquipo($id_equipo,$id_equipo_new,$nom_equipo,$ram,$disco,$tipo_disco,$id_mm,$id_os,$id_cpu,$generacion,$id_tipo,$id_antivirus,$id_software,$estado,$mantenimiento,$id_user){
+    public function EditarEquipo($id_equipo,$nom_equipo,$ram,$disco,$tipo_disco,$id_mm,$id_os,$id_cpu,$generacion,$id_tipo,$id_antivirus,$id_software,$estado,$mantenimiento,$id_user){
       include 'conexion.php';
       $sql = "
         UPDATE `equipo`
-        SET `id_equipo`='$id_equipo_new' , `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `tipo_disco`='$tipo_disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `generacion`='$generacion' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `estado`='$estado' , `mantenimiento`='$mantenimiento' , `id_user`='$id_user'
+        SET `nom_equipo`='$nom_equipo' , `ram`='$ram' , `disco`='$disco' , `tipo_disco`='$tipo_disco' , `id_mm`='$id_mm' , `id_os`='$id_os' , `id_cpu`='$id_cpu' , `generacion`='$generacion' , `id_tipo`='$id_tipo' , `id_antivirus`='$id_antivirus' , `id_software`='$id_software' , `estado`='$estado' , `mantenimiento`='$mantenimiento' , `id_user`='$id_user'
         WHERE `equipo`.`id_equipo`='$id_equipo'
       ";
       mysqli_query($link, $sql);
