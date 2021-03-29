@@ -67,16 +67,6 @@
                   <tbody>
                     <tr>
                       <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
-                      <td>DS6GF5S4G</td>
-                      <td>TBGRGAFSI002</td>
-                      <td>HP COMPAQ 8200</td>
-                      <td>Windows 7 Pro</td>
-                      <td><span class="badge badge-pill badge-success">Activo</span></td>
-                      <td>rbanagasta</td>
-                      <td><a href="mostrarequipo.php?id_equipo=RFD43D1FD3" class="btn btn-info btn-sm"><i class="fas fa-cogs"></i></a></td>
-                    </tr>
-                    <tr>
-                      <th><input type="checkbox" name="" value="" class="ml-1 case"></th>
                       <td>DSGMHHJJ5</td>
                       <td>TBGROMGMMD003</td>
                       <td>HP PROBOOK 4430S</td>
