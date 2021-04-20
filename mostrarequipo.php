@@ -48,7 +48,7 @@
                       <button type="button" name="button" class="btn btn-info"><i class="fas fa-file-alt"></i></button>
                       <button type="button" name="button" class="btn btn-dark"><i class="fas fa-tools"></i></button>
                       <button type="button" name="button" class="btn btn-primary"><i class="fas fa-file-invoice"></i></button>
-                      <button type="button" name="button" class="btn btn-secondary" id="EliminarUnEquipo"><i class="fas fa-trash"></i></button>
+                      <button type="button" name="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal4"><i class="fas fa-trash"></i></button>
                     </div>
                   </div>
                 </div>
@@ -218,6 +218,27 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="guardar_nuevo_id"><i class="fas fa-save"></i> Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModal4Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModal3Label"><i class="fas fa-trash"></i> Eliminar Equipo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Esta Seguro que desea Eliminar el Equipo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No, Cancelar</button>
+            <button type="button" class="btn btn-success" id="EliminarUnEquipo">Si, Eliminar</button>
           </div>
         </div>
       </div>

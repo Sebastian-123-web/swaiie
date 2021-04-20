@@ -550,7 +550,6 @@ $('#EliminarUnEquipo').click(function(){
     type : 'POST',
     data : { id_equipo },
     success : function(response){
-      alert(response);
       window.location.href = "equipo.php";
     }
   });
