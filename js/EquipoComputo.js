@@ -370,6 +370,7 @@ function InsertarComponentesoftware(){
         data : { id_equipo },
         success : function(softwaree){
           let unequipo = JSON.parse(softwaree);
+          console.log(unequipo);
           var insertar = '';
           software.forEach(software => {
             if (software.software == unequipo.software) {
@@ -591,4 +592,19 @@ $('#guardar_nuevo_id').click(function(){
       }
     }
   });
+});
+
+$('#mantenimientoPreCor').click(function(){
+  var id_equipo = localStorage.getItem('id_equipo');
+  console.log(id_equipo);
+  var tipomantenimiento = document.getElementsByName('tipomantenimiento');
+  var responsable = document.getElementById('responsable').value;
+  console.log(mantenimiento,responsable);
+  $.ajax({
+    url: '',
+    type: 'GET',
+    success: function(response){
+      window.open('archivos/informe_ticket.php?id_equipo='+id_equipo+'&tipomantenimiento='+tipomantenimiento+'&responsable='+responsable);
+    }
+  })
 });

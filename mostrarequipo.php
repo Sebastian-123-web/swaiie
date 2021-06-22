@@ -216,8 +216,8 @@
             <input type="text" name="id_equipo_edit" value="" class="form-control" id="id_equipo_nuevo" placeholder="Nuevo N° Serie">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="guardar_nuevo_id"><i class="fas fa-save"></i> Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Cancelar</button>
+            <button type="button" class="btn btn-primary" id="guardar_nuevo_id"><i class="fas fa-save"></i> Si, Guardar</button>
           </div>
         </div>
       </div>
@@ -228,7 +228,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModal3Label"><i class="fas fa-trash"></i> Eliminar Equipo</h5>
+            <h5 class="modal-title" id="exampleModal4Label"><i class="fas fa-trash"></i> Eliminar Equipo</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -239,6 +239,38 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">No, Cancelar</button>
             <button type="button" class="btn btn-success" id="EliminarUnEquipo">Si, Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal MANTENIMIENTO PREVENTIVO/CORRECTIVO -->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModal5Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModal5Label"><i class="fas fa-tools"></i> FICHA DE MANTENIMIENTO PREVENTIVO / CORRECTIVO</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <b>Tipo de Mantenimiento</b>
+                <select name="tipomantenimiento" class="form-control my-3">
+                  <option value="Preventivo" selected>Preventivo</option>
+                  <option value="Correctivo">Correctivo</option>
+                </select>
+                <div class="">
+                  <b>Responsable</b>
+                  <input type="text" name="responsable" id="responsable" class="form-control mt-3" value="" placeholder="Nombre del Responsable">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="mantenimientoPreCor">Descargar</button>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ $documento
     ->setKeywords('etiquetas o palabras clave separadas por espacios')
     ->setCategory('La categoría');
 
-$nombreDelDocumento = "Mi primer archivo.xlsx";
+$nombreDelDocumento = "Inventario Transber.xlsx";
 
 $hoja = $documento->getActiveSheet();
 $hoja->setTitle("Inventario");

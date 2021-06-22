@@ -1,13 +1,40 @@
 <?php
   require_once('../mpdf/vendor/autoload.php');
-  $ticket=10;
-  $modelo='modelo';
-  $serie='serie';
-  $tipo='tipo';
-  $os='os';
-  $ram='ram';
-  $cpu='cpu';
-  $responsable='Responsable';
+
+  $id_equipo=$_GET['id_equipo'];
+  include '../clases/conexion.php';
+  $sql = "
+    SELECT `equipo`.`id_equipo`,`equipo`.`nom_equipo`,`equipo`.`ram`,`equipo`.`disco`,`equipo`.`tipo_disco`, `marca_modelo`.`mm`, `os`.`os`, `cpu`.`cpu`, `equipo`.`generacion`, `tipo`.`tipo`, `antivirus`.`antivirus`, `software`.`software`, `equipo`.`estado`, `equipo`.`mantenimiento`, `usuario`.`id_user`, `usuario`.`nombre`, `usuario`.`apellido`
+    FROM `equipo`
+    INNER JOIN `marca_modelo` ON `equipo`.`id_mm`=`marca_modelo`.`id_mm`
+    INNER JOIN `os` ON `equipo`.`id_os`=`os`.`id_os`
+    INNER JOIN `cpu` ON `equipo`.`id_cpu`=`cpu`.`id_cpu`
+    INNER JOIN `tipo` ON `equipo`.`id_tipo`=`tipo`.`id_tipo`
+    INNER JOIN `antivirus` ON `equipo`.`id_antivirus`=`antivirus`.`id_antivirus`
+    INNER JOIN `software` ON `equipo`.`id_software`=`software`.`id_software`
+    INNER JOIN `usuario` ON `equipo`.`id_user`=`usuario`.`id_user`
+    WHERE `id_equipo`='$id_equipo'
+  ";
+  $query = mysqli_query($link, $sql);
+  $array = mysqli_fetch_array($query);
+
+
+  $usuario=$array[15] + ' ' + $array[16];
+  $nombreE='TBGRGAFCO00X';
+  $modelo='HP COMPAQ 8200';
+  $serie='DF5HED456';
+  $tipo='DESKTOP';
+  $os='Windows 7';
+  $ram='4';
+  $cpu='CORE i5';
+  $PreCor=$_GET['tipomantenimiento'];
+  if ($PreCor=='Preventivo') {
+    $PreCor=' ■ Preventivo ☐ Correctivo';
+  }else {
+    $PreCor='☐ Preventivo ■ Correctivo';
+  }
+  $DetallesAdicionales='PROBLEMA: Lentitud, el Sistema Operativo esta presentado fallas. SOLUCIÓN: Se formateo y reinstalo el Sistema Operativo.';
+  $responsable=$_GET['responsable'];
   $responsable = ucwords($responsable);//PONE LA PRIMERA LETRA EN MAYUSCULA DE CADA PALABRA EN UN STRING (PHP)
   $dia = date("j");
   $mes = date("n");
@@ -38,7 +65,7 @@
   </table>
 
   <br>
-  <h4 align="center" style="font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:17px;font-weight:normal;"><b>Nombre de Usuario:<u>ARREGLO 1 Y 2</u> IP:<u>	DHCP </u></b></h4>
+  <h4 align="center" style="font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:17px;font-weight:normal;"><b>Nombre de Usuario:<u style="padding: 15px ;">'.$usuario.'</u> IP:<u>	DHCP </u></b></h4>
   <br>
   <h4 style="margin: 0 0 0 50px;font-weight:bold;color:rgb(1, 0, 102);font-family:Arial, sans-serif;font-size:14px;font-weight:normal;"><b>Información de la Maquina:</b></h4>
       <table class="tg" style="undefined;table-layout: fixed; width: 586px; margin: auto;">
@@ -49,7 +76,7 @@
       <col style="width: 143px">
       </colgroup>
         <tr>
-          <th class="tg-cly1" colspan="2"><span style="font-weight:bold;text-decoration:underline">Nombre del Equipo:</span><br>'.$array[14].'</th>
+          <th class="tg-cly1" colspan="2"><span style="font-weight:bold;text-decoration:underline">Nombre del Equipo:</span><br>'.$nombreE.'</th>
           <th class="tg-cly1"><span style="font-weight:bold;text-decoration:underline">Marca / Modelo:</span><br>'.$modelo.'</th>
           <th class="tg-cly1"><span style="font-weight:bold;text-decoration:underline">Numero de Serie:</span><br>'.$serie.'</th>
         </tr>
@@ -60,7 +87,7 @@
         <tr>
           <td class="tg-cly1"><span style="font-weight:bold;text-decoration:underline">Memoria:</span><br>'.$ram.'GB</td>
           <td class="tg-cly1"><span style="font-weight:bold;text-decoration:underline">CPU: </span><br>'.$cpu.'</td>
-          <td class="tg-cly1" colspan="2"><span style="font-weight:bold;text-decoration:underline">Tipo de Mantenimiento </span><br>☐ Preventivo ☐ Correctivo</td>
+          <td class="tg-cly1" colspan="2"><span style="font-weight:bold;text-decoration:underline">Tipo de Mantenimiento </span><br>'.$PreCor.'</td>
         </tr>
       </table>
       <br>
@@ -106,7 +133,7 @@
                   <col style="width: 585px">
                   </colgroup>
                     <tr>
-                      <th class="tg-cly1" style="height: 180px;">Un arreglo 15</th>
+                      <th class="tg-cly1" style="height: 180px;">'.$DetallesAdicionales.'</th>
                     </tr>
                   </table>
 
